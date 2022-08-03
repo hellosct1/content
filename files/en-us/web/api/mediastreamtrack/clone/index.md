@@ -1,6 +1,7 @@
 ---
 title: MediaStreamTrack.clone()
 slug: Web/API/MediaStreamTrack/clone
+page-type: web-api-instance-method
 tags:
   - API
   - Media Capture and Streams
@@ -11,7 +12,7 @@ tags:
   - clone
 browser-compat: api.MediaStreamTrack.clone
 ---
-{{APIRef("Media Capture and Streams")}}
+{{DefaultAPISidebar("Media Capture and Streams")}}
 
 The **`clone()`** method of the {{domxref("MediaStreamTrack")}}
 interface creates a duplicate of the `MediaStreamTrack`. This new
@@ -21,8 +22,12 @@ interface creates a duplicate of the `MediaStreamTrack`. This new
 ## Syntax
 
 ```js
-const newTrack = track.clone()
+clone()
 ```
+
+### Parameters
+
+None.
 
 ### Return value
 

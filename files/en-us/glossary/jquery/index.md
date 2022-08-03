@@ -3,7 +3,7 @@ title: jQuery
 slug: Glossary/jQuery
 tags:
   - Glossary
-  - JQuery
+  - jQuery
   - JavaScript
 ---
 **jQuery** is a {{Glossary("JavaScript")}} {{Glossary("Library")}} that focuses on simplifying {{Glossary("DOM")}} manipulation, {{Glossary("AJAX")}} calls, and {{Glossary("Event")}} handling.
@@ -37,6 +37,6 @@ window.addEventListener("load", () => {
 
 ## See also
 
-- {{Interwiki("wikipedia", "jQuery")}} on Wikipedia
+- [jQuery](https://en.wikipedia.org/wiki/JQuery) on Wikipedia
 - [jQuery Official Website](https://jquery.com/)
 - [Official API reference documentation](https://api.jquery.com/)[](https://api.jquery.com/)

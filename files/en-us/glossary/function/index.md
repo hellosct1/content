@@ -48,7 +48,7 @@ function addSquares(a,b) {
 };
 //Using ECMAScript 2015 arrow notation
 const addSquares = (a,b) => {
-   const square = x => x*x;
+   const square = (x) => x*x;
    return square(a) + square(b);
 };
 ```
@@ -62,7 +62,7 @@ function loop(x) {
    loop(x + 1);
 };
 //Using ECMAScript 2015 arrow notation
-const loop = x => {
+const loop = (x) => {
    if (x >= 10)
       return;
    loop(x + 1);
@@ -73,7 +73,7 @@ An **Immediately Invoked Function Expressions** ({{glossary("IIFE")}}) is a func
 
 ```js
 // Declared functions can't be called immediately this way
-// Error (https://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
+// Error (https://en.wikipedia.org/wiki/Immediately_invoked_function_expression)
 /*
 function foo() {
     console.log('Hello Foo');
@@ -92,7 +92,7 @@ function foo() {
 (() => console.log('hello world'))();
 ```
 
-If you'd like to know more about IIFEs, check out the following page on Wikipedia : [Immediately Invoked Function Expression](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
+If you'd like to know more about IIFEs, check out the following page on Wikipedia : [Immediately Invoked Function Expression](https://en.wikipedia.org/wiki/Immediately_invoked_function_expression)
 
 ## See also
 

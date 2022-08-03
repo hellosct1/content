@@ -14,7 +14,7 @@ browser-compat: javascript.builtins.Object.assign
 
 The **`Object.assign()`** method
 copies all {{jsxref("Object/propertyIsEnumerable", "enumerable", "", 1)}}
-{{jsxref("Object/hasOwnProperty", "own properties", "", 1)}} from one or more
+{{jsxref("Object/hasOwn", "own properties", "", 1)}} from one or more
 _source objects_ to a _target object_. It returns the modified target
 object.
 
@@ -63,7 +63,7 @@ In case of an error, for example if a property is non-writable, a
 changed if any properties are added before the error is raised.
 
 > **Note:** `Object.assign()` does not throw on
-> {{jsxref("null")}} or {{jsxref("undefined")}} sources.
+> [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) or {{jsxref("undefined")}} sources.
 
 ## Examples
 
@@ -77,7 +77,7 @@ console.log(copy); // { a: 1 }
 
 ### Warning for Deep Clone
 
-For [deep cloning](/en-us/docs/Glossary/Deep_copy), we need to use alternatives, because `Object.assign()`
+For [deep cloning](/en-US/docs/Glossary/Deep_copy), we need to use alternatives, because `Object.assign()`
 copies property values.
 
 If the source value is a reference to an object, it only copies the reference value.
@@ -217,14 +217,14 @@ console.log(copy);
 
 // This is an assign function that copies full descriptors
 function completeAssign(target, ...sources) {
-  sources.forEach(source => {
+  sources.forEach((source) => {
     let descriptors = Object.keys(source).reduce((descriptors, key) => {
       descriptors[key] = Object.getOwnPropertyDescriptor(source, key);
       return descriptors;
     }, {});
 
     // By default, Object.assign copies enumerable Symbols, too
-    Object.getOwnPropertySymbols(source).forEach(sym => {
+    Object.getOwnPropertySymbols(source).forEach((sym) => {
       let descriptor = Object.getOwnPropertyDescriptor(source, sym);
       if (descriptor.enumerable) {
         descriptors[sym] = descriptor;
@@ -252,7 +252,5 @@ console.log(copy);
 
 - [Polyfill of `Object.assign` in `core-js`](https://github.com/zloirock/core-js#ecmascript-object)
 - {{jsxref("Object.defineProperties()")}}
-- [Enumerability
-  and ownership of properties](/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
-- [Spread
-  in object literals](/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_in_object_literals)
+- [Enumerability and ownership of properties](/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
+- [Spread in object literals](/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_in_object_literals)

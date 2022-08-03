@@ -23,9 +23,9 @@ Retro [pixel art](https://wikipedia.org/wiki/Pixel_art) aesthetics are getting p
 <table class="standard-table">
   <tbody>
     <tr>
-      <td><img alt="" src="technique_original.png" /></td>
-      <td><img alt="" src="technique_original.png" /></td>
-      <td><img alt="" src="technique_4x.png" /></td>
+      <td><img alt="small pixelated man" src="technique_original.png" /></td>
+      <td><img alt="small pixelated man" src="technique_original.png" /></td>
+      <td><img alt="larger pixelated man" src="technique_4x.png" /></td>
     </tr>
     <tr>
       <td>original size</td>
@@ -97,4 +97,4 @@ This code used together produces the following result:
 
 {{ EmbedLiveSample('An_example', '100%', 520) }}
 
-> **Note:** You can check out the [original code on Github](https://github.com/belen-albeza/retro-canvas) ([and a live example](https://belen-albeza.github.io/retro-canvas/).)
+> **Note:** You can check out the [original code on GitHub](https://github.com/belen-albeza/retro-canvas) ([and a live example](https://belen-albeza.github.io/retro-canvas/).)

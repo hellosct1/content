@@ -1,6 +1,7 @@
 ---
 title: Accelerometer.x
 slug: Web/API/Accelerometer/x
+page-type: web-api-instance-property
 tags:
   - API
   - Accelerometer
@@ -24,17 +25,17 @@ If a feature policy blocks use of a feature it is because your code is inconsist
 
 A {{jsxref('Number')}}.
 
-## Example
+## Examples
 
 Acceleration is typically read in the {{domxref('Sensor.reading_event', 'reading')}} event callback. In the example below this occurs sixty times a second.
 
 ```js
 let accelerometer = new Accelerometer({frequency: 60});
 
-accelerometer.addEventListener('reading', e => {
-  console.log("Acceleration along the X-axis " + accelerometer.x);
-  console.log("Acceleration along the Y-axis " + accelerometer.y);
-  console.log("Acceleration along the Z-axis " + accelerometer.z);
+accelerometer.addEventListener('reading', (e) => {
+  console.log(`Acceleration along the X-axis ${accelerometer.x}`);
+  console.log(`Acceleration along the Y-axis ${accelerometer.y}`);
+  console.log(`Acceleration along the Z-axis ${accelerometer.z}`);
 });
 accelerometer.start();
 ```

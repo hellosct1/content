@@ -44,8 +44,7 @@ includes(searchElement, fromIndex)
     The first element to be searched is found at `fromIndex` for
     positive values of `fromIndex`, or at
     `arr.length + fromIndex` for negative values of
-    `fromIndex` (using the {{interwiki("wikipedia", "absolute
-    value")}} of `fromIndex` as the number of elements from the end
+    `fromIndex` (using the [absolute value](https://en.wikipedia.org/wiki/Absolute_value) of `fromIndex` as the number of elements from the end
     of the array at which to start the search).
 
     Defaults to `0`.
@@ -120,7 +119,7 @@ The example below illustrates `includes()` method called on the function's
 (function() {
   console.log(Array.prototype.includes.call(arguments, 'a'))  // true
   console.log(Array.prototype.includes.call(arguments, 'd'))  // false
-})('a','b','c') 
+})('a','b','c')
 ```
 
 ## Specifications

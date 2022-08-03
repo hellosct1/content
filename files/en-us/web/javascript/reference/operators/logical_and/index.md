@@ -69,7 +69,7 @@ See the example below:
 function A() { console.log('called A'); return false; }
 function B() { console.log('called B'); return true; }
 
-console.log( A() && B() );
+console.log(A() && B());
 // logs "called A" to the console due to the call for function A,
 // && evaluates to false (function A returns false), then false is logged to the console;
 // the AND operator short-circuits here and ignores function B
@@ -80,7 +80,7 @@ console.log( A() && B() );
 The AND operator has a higher precedence than the OR operator, meaning the `&&` operator is executed before the `||` operator (see [operator precedence](/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)).
 
 ```js
-false || true && true            // returns true
+true || false && false           // returns true
 true && (false || false)         // returns false
 (2 == 3) || (4 < 0) && (1 == 1)  // returns false
 ```

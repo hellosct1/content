@@ -143,12 +143,12 @@ cy='150' r='7' fill='#0000ff' fill-opacity='0.5'/>
       if( !motes )
         return [0,0];
 
-      if( motes.length == 0 )
+      if( motes.length === 0 )
         return [0,0];
 
       var i;
       var sum_x=0, sum_y=0;
-      for(i=0; i<motes.length; i++)
+      for (i = 0; i < motes.length; i++)
       {
         sum_x += motes[i].x;
         sum_y += motes[i].y;
@@ -184,9 +184,9 @@ cy='150' r='7' fill='#0000ff' fill-opacity='0.5'/>
     // Turn this into a class.
     new Mote();
 
-    // Mote::applyForce() -- Adjust velocity
+    // Mote::applyForce() — Adjust velocity
     // towards the given position.
-    // Warning: Pseudo-physics -- not really
+    // Warning: Pseudo-physics — not really
     // governed by any /real/ physical principles.
     Mote.prototype.applyForce = function(pos, mag)
     {
@@ -201,7 +201,7 @@ cy='150' r='7' fill='#0000ff' fill-opacity='0.5'/>
         this.vy -= mag;
     }
 
-    // Mote::capVelocity() -- Apply an upper limit
+    // Mote::capVelocity() — Apply an upper limit
     // on mote velocity.
     Mote.prototype.capVelocity = function()
     {
@@ -218,7 +218,7 @@ cy='150' r='7' fill='#0000ff' fill-opacity='0.5'/>
         this.vy = -max;
     }
 
-    // Mote::capPosition() -- Apply an upper/lower limit
+    // Mote::capPosition() — Apply an upper/lower limit
     // on mote position.
     Mote.prototype.capPosition = function()
     {
@@ -234,7 +234,7 @@ cy='150' r='7' fill='#0000ff' fill-opacity='0.5'/>
         this.y = dims[1]-1;
     }
 
-    // Mote::move() -- move a mote, update the screen.
+    // Mote::move() — move a mote, update the screen.
     Mote.prototype.move = function()
     {
       // Apply attraction to cursor.
@@ -295,7 +295,7 @@ cy='150' r='7' fill='#0000ff' fill-opacity='0.5'/>
       while( motes.length < num )
         motes.push( new Mote() );
       // Or too many?
-      if( num == 0 )
+      if( num === 0 )
         motes = [];
       else if( motes.length > num )
         motes = motes.slice(0,num-1);

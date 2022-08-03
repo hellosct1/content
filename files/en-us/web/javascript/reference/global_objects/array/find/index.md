@@ -29,32 +29,34 @@ If no values satisfy the testing function, {{jsxref("undefined")}} is returned.
 
 ```js
 // Arrow function
-find((element) => { /* ... */ } )
-find((element, index) => { /* ... */ } )
-find((element, index, array) => { /* ... */ } )
+find((element) => { /* … */ } )
+find((element, index) => { /* … */ } )
+find((element, index, array) => { /* … */ } )
 
 // Callback function
 find(callbackFn)
 find(callbackFn, thisArg)
 
 // Inline callback function
-find(function(element) { /* ... */ })
-find(function(element, index) { /* ... */ })
-find(function(element, index, array){ /* ... */ })
-find(function(element, index, array) { /* ... */ }, thisArg)
+find(function(element) { /* … */ })
+find(function(element, index) { /* … */ })
+find(function(element, index, array){ /* … */ })
+find(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Parameters
 
 - `callbackFn`
 
-  - : Function to execute on each value in the array, taking 3 arguments:
+  - : Function to execute on each value in the array.
+
+    The function is called with the following arguments:
 
     - `element`
       - : The current element in the array.
-    - `index` {{optional_inline}}
+    - `index`
       - : The index (position) of the current element in the array.
-    - `array` {{optional_inline}}
+    - `array`
       - : The array that `find` was called on.
 
     The callback must return a [truthy](/en-US/docs/Glossary/Truthy) value to indicate a matching element has been found.
@@ -117,7 +119,7 @@ const inventory = [
   {name: 'cherries', quantity: 5}
 ];
 
-const result = inventory.find( ({ name }) => name === 'cherries' );
+const result = inventory.find(({ name }) => name === 'cherries');
 
 console.log(result) // { name: 'cherries', quantity: 5 }
 ```

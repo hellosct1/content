@@ -55,7 +55,7 @@ browser.contextMenus.create({
 })
 
 browser.contextMenus.onClicked.addListener(function(info, tab) {
-  if (info.menuItemId == "show") {
+  if (info.menuItemId === "show") {
     browser.pageAction.show(tab.id)
   }
 })
@@ -63,7 +63,7 @@ browser.contextMenus.onClicked.addListener(function(info, tab) {
 
 {{WebExtExamples}}
 
-> **Note:** This API is based on Chromium's [`chrome.pageAction`](https://developer.chrome.com/extensions/pageAction#method-show) API. This documentation is derived from [`page_action.json`](https://chromium.googlesource.com/chromium/src/+/master/chrome/common/extensions/api/page_action.json) in the Chromium code.
+> **Note:** This API is based on Chromium's [`chrome.pageAction`](https://developer.chrome.com/docs/extensions/reference/pageAction/#method-show) API. This documentation is derived from [`page_action.json`](https://chromium.googlesource.com/chromium/src/+/master/chrome/common/extensions/api/page_action.json) in the Chromium code.
 >
 > Microsoft Edge compatibility data is supplied by Microsoft Corporation and is included here under the Creative Commons Attribution 3.0 United States License.
 

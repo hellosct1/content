@@ -14,8 +14,8 @@ The `playbackRate` property of the {{ htmlelement("audio") }} and {{ htmlelement
 
 Let's starting by looking at a brief example of `playbackRate` usage:
 
-```java
-var myAudio = document.createElement('audio');
+```js
+const myAudio = document.createElement('audio');
 myAudio.setAttribute('src','audiofile.mp3');
 myAudio.playbackRate = 0.5;
 ```
@@ -61,7 +61,7 @@ Finally, we listen for the `input` event firing on the {{ htmlelement("input") }
 
 ## defaultPlaybackRate and ratechange
 
-In addition to `playbackRate,` we also have a `defaultPlaybackRate` property available, which lets us set the default playback rate: the playback rate to which the media resets; for example, if we change the source of the video, or (in some browsers) when an `ended` event is generated.
+In addition to `playbackRate`, we also have a `defaultPlaybackRate` property available, which lets us set the default playback rate: the playback rate to which the media resets; for example, if we change the source of the video, or (in some browsers) when an `ended` event is generated.
 
 So `defaultPlaybackRate` allows us to set the playback rate _before_ playing the media, while `playbackRate` allows us to change it during media playback.
 

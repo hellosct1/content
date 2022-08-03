@@ -1,6 +1,7 @@
 ---
 title: InputDeviceCapabilities
 slug: Web/API/InputDeviceCapabilities
+page-type: web-api-interface
 tags:
   - API
   - Experimental
@@ -17,12 +18,12 @@ In some instances, `InputDeviceCapabilities` represents the capabilities of logi
 
 ## Constructors
 
-- {{DOMxRef("InputDeviceCapabilities.InputDeviceCapabilities()")}}
+- {{domxref("InputDeviceCapabilities.InputDeviceCapabilities", "InputDeviceCapabilities()")}}
   - : Creates an `InputDeviceCapabilities` object.
 
 ## Properties
 
-- {{DOMxRef("InputDeviceCapabilities.firesTouchEvents")}}{{ReadOnlyInline}}
+- {{DOMxRef("InputDeviceCapabilities.firesTouchEvents")}} {{ReadOnlyInline}}
   - : A {{JSxRef("Boolean")}} that indicates whether the device dispatches touch events.
 
 ## Methods

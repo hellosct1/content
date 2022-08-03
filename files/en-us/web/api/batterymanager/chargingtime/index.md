@@ -1,6 +1,7 @@
 ---
 title: BatteryManager.chargingTime
 slug: Web/API/BatteryManager/chargingTime
+page-type: web-api-instance-property
 tags:
   - API
   - Property
@@ -17,7 +18,11 @@ discharging, its value is
 > browsers round them to a higher interval
 > (typically to the closest 15 minutes) for privacy reasons.
 
-## Example
+## Value
+
+A number.
+
+## Examples
 
 ### HTML Content
 
@@ -28,14 +33,14 @@ discharging, its value is
 ### JavaScript Content
 
 ```js
-navigator.getBattery().then(battery => {
+navigator.getBattery().then((battery) => {
    const time = battery.chargingTime;
 
-   document.querySelector('#chargingTime').textContent = battery.chargingTime;
+   document.querySelector('#chargingTime').textContent = `Time to fully charge the battery: ${time}s`;
 });
 ```
 
-{{ EmbedLiveSample('Example', '100%', 30) }}
+{{ EmbedLiveSample('Examples', '100%', 30) }}
 
 ## Specifications
 

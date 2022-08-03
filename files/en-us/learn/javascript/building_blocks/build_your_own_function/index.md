@@ -63,7 +63,7 @@ To begin with, let's put together a basic function.
 
 > **Note:** For function naming conventions, you should follow the same rules as [variable naming conventions](/en-US/docs/Learn/JavaScript/First_steps/Variables#an_aside_on_variable_naming_rules). This is fine, as you can tell them apart — function names appear with parentheses after them, and variables don't.
 
-1. Start by accessing the [function-start.html](https://github.com/mdn/learning-area/blob/master/javascript/building-blocks/functions/function-start.html) file and making a local copy. You'll see that the HTML is simple — the body contains just a single button. We've also provided some basic CSS to style the custom message box, and an empty {{htmlelement("script")}} element to put our JavaScript in.
+1. Start by accessing the [function-start.html](https://github.com/mdn/learning-area/blob/main/javascript/building-blocks/functions/function-start.html) file and making a local copy. You'll see that the HTML is simple — the body contains just a single button. We've also provided some basic CSS to style the custom message box, and an empty {{htmlelement("script")}} element to put our JavaScript in.
 2. Next, add the following inside the `<script>` element:
 
     ```js
@@ -176,7 +176,7 @@ You've now got your function definition written into your `<script>` element jus
     btn.addEventListener('click', displayMessage);
     ```
 
-    In a similar way to our `closeBtn.addEventListener...` line inside the function, here we are calling some code in response to a button being clicked. But in this case, instead of calling an anonymous function containing some code, we are calling our `displayMessage()` function by name.
+    In a similar way to our closeBtn's click event handler, here we are calling some code in response to a button being clicked. But in this case, instead of calling an anonymous function containing some code, we are calling our `displayMessage()` function by name.
 
 6. Try saving and refreshing the page — now you should see the message box appear when you click the button.
 
@@ -240,7 +240,7 @@ As it stands, the function is still not very useful — we don't want to just sh
 
 On to the next parameter. This one is going to involve slightly more work — we are going to set it so that depending on what the `msgType` parameter is set to, the function will display a different icon and a different background color.
 
-1. First of all, download the icons needed for this exercise ([warning](https://github.com/mdn/learning-area/blob/master/javascript/building-blocks/functions/icons/warning.png) and [chat](https://github.com/mdn/learning-area/blob/master/javascript/building-blocks/functions/icons/chat.png)) from GitHub. Save them in a new folder called `icons` in the same location as your HTML file.
+1. First of all, download the icons needed for this exercise ([warning](https://github.com/mdn/learning-area/blob/main/javascript/building-blocks/functions/icons/warning.png) and [chat](https://github.com/mdn/learning-area/blob/main/javascript/building-blocks/functions/icons/chat.png)) from GitHub. Save them in a new folder called `icons` in the same location as your HTML file.
 
     > **Note:** The warning and chat icons were originally found on [iconfinder.com](https://www.iconfinder.com/), and designed by [Nazarrudin Ansyari](https://www.iconfinder.com/nazarr) — Thanks! (The actual icon pages were since moved or removed.)
 
@@ -256,7 +256,7 @@ On to the next parameter. This one is going to involve slightly more work — we
     width: 242px;
     ```
 
-3. Next, add the following lines inside the `.msgBox p { ... }` rule:
+3. Next, add the following lines inside the `.msgBox p { }` rule:
 
     ```css
     padding-left: 82px;
@@ -278,7 +278,7 @@ On to the next parameter. This one is going to involve slightly more work — we
     }
     ```
 
-    Here, if the `msgType` parameter is set as `'warning'`, the warning icon is displayed and the panel's background color is set to red. If it is set to `'chat'`, the chat icon is displayed and the panel's background color is set to aqua blue. If the `msgType` parameter is not set at all (or to something different), then the `else { ... }` part of the code comes into play, and the paragraph is given default padding and no icon, with no background panel color set either. This provides a default state if no `msgType` parameter is provided, meaning that it is an optional parameter!
+    Here, if the `msgType` parameter is set as `'warning'`, the warning icon is displayed and the panel's background color is set to red. If it is set to `'chat'`, the chat icon is displayed and the panel's background color is set to aqua blue. If the `msgType` parameter is not set at all (or to something different), then the `else { }` part of the code comes into play, and the paragraph is given default padding and no icon, with no background panel color set either. This provides a default state if no `msgType` parameter is provided, meaning that it is an optional parameter!
 
 5. Let's test out our updated function, try updating the `displayMessage()` call from this:
 
@@ -295,7 +295,7 @@ On to the next parameter. This one is going to involve slightly more work — we
 
     You can see how useful our (now not so) little function is becoming.
 
-> **Note:** If you have trouble getting the example to work, feel free to check your code against the [finished version on GitHub](https://github.com/mdn/learning-area/blob/master/javascript/building-blocks/functions/function-stage-4.html) ([see it running live](https://mdn.github.io/learning-area/javascript/building-blocks/functions/function-stage-4.html) also), or ask us for help.
+> **Note:** If you have trouble getting the example to work, feel free to check your code against the [finished version on GitHub](https://github.com/mdn/learning-area/blob/main/javascript/building-blocks/functions/function-stage-4.html) ([see it running live](https://mdn.github.io/learning-area/javascript/building-blocks/functions/function-stage-4.html) also), or ask us for help.
 
 ## Test your skills!
 

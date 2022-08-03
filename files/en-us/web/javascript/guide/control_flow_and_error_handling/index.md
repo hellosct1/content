@@ -25,8 +25,9 @@ The [JavaScript reference](/en-US/docs/Web/JavaScript/Reference/Statements)
 contains exhaustive details about the statements in this chapter. The semicolon
 (`;`) character is used to separate statements in JavaScript code.
 
-Any JavaScript expression is also a statement. See [Expressions and
-operators](/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) for complete information about expressions.
+Any JavaScript expression is also a statement.
+See [Expressions and operators](/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
+for complete information about expressions.
 
 ## Block statement
 
@@ -130,7 +131,7 @@ if (condition_1) {
 
 In the case of multiple conditions, only the first logical condition which evaluates to
 `true` will be executed. To execute multiple statements, group them within a
-block statement (`{ … }`).
+block statement (`{ /* … */ }`).
 
 #### Best practice
 
@@ -191,7 +192,7 @@ displays an alert and returns `false`.
 
 ```js
 function checkData() {
-  if (document.form1.threeChar.value.length == 3) {
+  if (document.form1.threeChar.value.length === 3) {
     return true;
   } else {
     alert(
@@ -297,8 +298,7 @@ are created equal. While it is common to throw numbers or strings as errors, it 
 frequently more effective to use one of the exception types specifically created for
 this purpose:
 
-- [ECMAScript
-  exceptions](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#error_types)
+- [ECMAScript exceptions](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#error_types)
 - [`DOMException`](/en-US/docs/Web/API/DOMException)
   and [`DOMError`](/en-US/docs/Web/API/DOMError)
 
@@ -318,7 +318,7 @@ code throws several exceptions of varying types:
 throw 'Error2';   // String type
 throw 42;         // Number type
 throw true;       // Boolean type
-throw {toString: function() { return "I'm an object!"; } };
+throw {toString() { return "I'm an object!"; } };
 ```
 
 ### `try...catch` statement
@@ -506,9 +506,8 @@ If an inner `try` block does _not_ have a corresponding
 2. the enclosing `try...catch` statement's `catch` block is
     checked for a match.
 
-For more information, see [nested
-try-blocks](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch#nested_try-blocks) on the
-[`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+For more information, see [nested try-blocks](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch#nested_try-blocks)
+on the [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
 reference page.
 
 ### Utilizing Error objects
@@ -535,7 +534,7 @@ function doSomethingErrorProne() {
     doSomethingToGetAJavascriptError();
   }
 }
-⋮
+
 try {
   doSomethingErrorProne();
 } catch (e) {               // NOW, we actually use `console.error()`

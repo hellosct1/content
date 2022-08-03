@@ -1,6 +1,7 @@
 ---
 title: XMLHttpRequest.send()
 slug: Web/API/XMLHttpRequest/send
+page-type: web-api-instance-method
 tags:
   - AJAX
   - API
@@ -37,7 +38,8 @@ If no {{HTTPHeader("Accept")}} header has been set using the
 ## Syntax
 
 ```js
-XMLHttpRequest.send(body)
+send()
+send(body)
 ```
 
 ### Parameters
@@ -47,21 +49,18 @@ XMLHttpRequest.send(body)
   - : A body of data to be sent in the XHR request. This can be:
 
     - A {{domxref("Document")}}, in which case it is serialized before being sent.
-    - An `XMLHttpRequestBodyInit`, which [per the
-      Fetch spec](https://fetch.spec.whatwg.org/#typedefdef-xmlhttprequestbodyinit) can be a {{domxref("Blob")}}, {{domxref("BufferSource")}},
-      {{domxref("FormData")}}, {{domxref("URLSearchParams")}}, or
-      {{domxref("USVString")}} object.
+    - An `XMLHttpRequestBodyInit`, which [per the Fetch spec](https://fetch.spec.whatwg.org/#typedefdef-xmlhttprequestbodyinit) can be a {{domxref("Blob")}}, n {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, a {{jsxref("DataView")}}, a {{domxref("FormData")}}, a {{domxref("URLSearchParams")}}, or a string literal or object.
     - `null`
 
     If no value is specified for the body, a default value of `null` is used.
 
-The best way to send binary content (e.g. in file uploads) is by using an
-{{domxref("ArrayBufferView")}} or {{domxref("Blob")}} in conjunction with the
-`send()` method.
+The best way to send binary content (e.g. in file uploads) is by using
+a {{jsxref("TypedArray")}}, a {{jsxref("DataView")}} or a {{domxref("Blob")}} object
+in conjunction with the `send()` method.
 
 ### Return value
 
-`undefined`.
+None ({{jsxref("undefined")}}).
 
 ### Exceptions
 
@@ -73,7 +72,7 @@ The best way to send binary content (e.g. in file uploads) is by using an
 ## Example: GET
 
 ```js
-var xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 xhr.open('GET', '/server', true);
 
 xhr.onload = function () {
@@ -90,7 +89,7 @@ xhr.send(null);
 ## Example: POST
 
 ```js
-var xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 xhr.open("POST", '/server', true);
 
 //Send the proper header information along with the request
@@ -116,7 +115,5 @@ xhr.send("foo=bar&lorem=ipsum");
 
 ## See also
 
-- [Using
-  XMLHttpRequest](/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
-- [HTML in
-  XMLHttpRequest](/en-US/docs/Web/API/XMLHttpRequest/HTML_in_XMLHttpRequest)
+- [Using XMLHttpRequest](/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+- [HTML in XMLHttpRequest](/en-US/docs/Web/API/XMLHttpRequest/HTML_in_XMLHttpRequest)

@@ -7,6 +7,9 @@ tags:
   - ARIA Tab
   - ARIA widget
   - Reference
+spec-urls:
+  - https://w3c.github.io/aria/#tab
+  - https://w3c.github.io/aria-practices/#tabpanel
 ---
 The ARIA `tab` role indicates an interactive element inside a `tablist` that, when activated, displays its associated `tabpanel`.
 
@@ -36,9 +39,9 @@ Because descendants of `tab` are presentational, the following code is equivalen
 
 ```html
 <div role="tab"><h3 role="presentation">Title of my tab</h3></div>
-````
+```
 
-From the assitive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
 
 ```html
 <div role="tab">Title of my tab</div>
@@ -147,14 +150,14 @@ window.addEventListener('DOMContentLoaded', () => {
   const tabList = document.querySelector('[role="tablist"]');
 
   // Add a click event handler to each tab
-  tabs.forEach(tab => {
+  tabs.forEach((tab) => {
     tab.addEventListener('click', changeTabs);
   });
 
   // Enable arrow navigation between tabs in the tab list
   let tabFocus = 0;
 
-  tabList.addEventListener('keydown', e => {
+  tabList.addEventListener('keydown', (e) => {
     // Move right
     if (e.keyCode === 39 || e.keyCode === 37) {
       tabs[tabFocus].setAttribute('tabindex', -1);
@@ -187,7 +190,7 @@ function changeTabs(e) {
   // Remove all current selected tabs
   parent
     .querySelectorAll('[aria-selected="true"]')
-    .forEach(t => t.setAttribute('aria-selected', false));
+    .forEach((t) => t.setAttribute('aria-selected', false));
 
   // Set this tab as selected
   target.setAttribute('aria-selected', true);
@@ -195,7 +198,7 @@ function changeTabs(e) {
   // Hide all tab panels
   grandparent
     .querySelectorAll('[role="tabpanel"]')
-    .forEach(p => p.setAttribute('hidden', true));
+    .forEach((p) => p.setAttribute('hidden', true));
 
   // Show the selected panel
   grandparent.parentNode
@@ -214,14 +217,9 @@ It is recommended to use a {{HTMLElement('button')}} element with the role `tab`
 
 What are the related properties, and in what order will this attribute or property be read, which property will take precedence over this one, and which property will be overwritten.
 
-Screenreader support is still to be determined. Visit https://github.com/mdn/content/blob/main/rfcs/aria-roles.md for more information.
-
 ## Specifications
 
-| Specification                                                                    | Status                                           |
-| -------------------------------------------------------------------------------- | ------------------------------------------------ |
-| {{SpecName("ARIA","#tab","tab")}}                                     | {{Spec2('ARIA')}}                         |
-| {{SpecName("ARIA Authoring Practices 1.2","#tabpanel","tabs")}} | {{Spec2('ARIA Authoring Practices 1.2')}} |
+{{Specifications}}
 
 ## See also
 

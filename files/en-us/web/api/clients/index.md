@@ -1,6 +1,7 @@
 ---
 title: Clients
 slug: Web/API/Clients
+page-type: web-api-interface
 tags:
   - API
   - Clients
@@ -24,7 +25,7 @@ The `Clients` interface provides access to {{domxref("Client")}} objects. Access
 - {{domxref("Clients.matchAll()")}}
   - : Returns a {{jsxref("Promise")}} for an array of {{domxref("Client")}} objects. An options argument allows you to control the types of clients returned.
 - {{domxref("Clients.openWindow()")}}
-  - : Opens a new browser window for a given url and returns a {{jsxref("Promise")}} for the new {{domxref("WindowClient")}}.
+  - : Opens a new browser window for a given URL and returns a {{jsxref("Promise")}} for the new {{domxref("WindowClient")}}.
 - {{domxref("Clients.claim()")}}
   - : Allows an active service worker to set itself as the {{domxref("ServiceWorkerContainer.controller", "controller")}} for all clients within its {{domxref("ServiceWorkerRegistration.scope", "scope")}}.
 
@@ -33,7 +34,7 @@ The `Clients` interface provides access to {{domxref("Client")}} objects. Access
 The following example shows an existing chat window or creates a new one when the user clicks a notification.
 
 ```js
-addEventListener('notificationclick', event => {
+addEventListener('notificationclick', (event) => {
   event.waitUntil(async function() {
     const allClients = await clients.matchAll({
       includeUncontrolled: true
@@ -45,7 +46,7 @@ addEventListener('notificationclick', event => {
     for (const client of allClients) {
       const url = new URL(client.url);
 
-      if (url.pathname == '/chat/') {
+      if (url.pathname === '/chat/') {
         // Excellent, let's use it!
         client.focus();
         chatClient = client;

@@ -13,11 +13,11 @@ browser-compat: html.elements.pre
 
 {{HTMLRef}}
 
-The **`<pre>`** [HTML](/en-US/docs/Web/HTML) element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or "[monospaced](https://en.wikipedia.org/wiki/Monospaced_font), font. Whitespace inside this element is displayed as written.
+The **`<pre>`** [HTML](/en-US/docs/Web/HTML) element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or [monospaced](https://en.wikipedia.org/wiki/Monospaced_font), font. Whitespace inside this element is displayed as written.
 
 {{EmbedInteractiveExample("pages/tabbed/pre.html", "tabbed-standard")}}
 
-If you have to display reserved characters such as `<`, `>`, `&`, `"` within the `<pre>` tag, the characters must be escaped using their respective [HTML entity](/en-US/docs/Glossary/Entity).
+If you have to display reserved characters such as `<`, `>`, `&`, and `"` within the `<pre>` tag, the characters must be escaped using their respective [HTML entity](/en-US/docs/Glossary/Entity).
 
 <table class="properties">
   <tbody>
@@ -77,7 +77,7 @@ If you have to display reserved characters such as `<`, `>`, `&`, `"` within the
 
 This element only includes the [global attributes](/en-US/docs/Web/HTML/Global_attributes).
 
-- {{htmlattrdef("cols")}} {{non-standard_inline}}{{deprecated_inline}}
+- {{htmlattrdef("cols")}} {{non-standard_inline}} {{deprecated_inline}}
   - : Contains the _preferred_ count of characters that a line should have. It was a non-standard synonym of {{htmlattrxref("width", "pre")}}. To achieve such an effect, use CSS {{Cssxref("width")}} instead.
 - {{htmlattrdef("width")}} {{deprecated_inline}}
   - : Contains the _preferred_ count of characters that a line should have. Though technically still implemented, this attribute has no visual effect; to achieve such an effect, use CSS {{Cssxref("width")}} instead.
@@ -142,8 +142,8 @@ body {
 <pre>
 let i = 5;
 
-if( i &lt; 10 &amp;&amp; i &gt; 0 )
-  return &quot; Single Digit Number &quot;
+if (i &lt; 10 &amp;&amp; i &gt; 0)
+  return &quot;Single Digit Number&quot;
 </pre>
 ```
 

@@ -1,6 +1,7 @@
 ---
 title: RTCPeerConnection.createDataChannel()
 slug: Web/API/RTCPeerConnection/createDataChannel
+page-type: web-api-instance-method
 tags:
   - API
   - Media
@@ -27,7 +28,8 @@ started by delivering a {{DOMxRef("RTCPeerConnection/negotiationneeded_event", "
 ## Syntax
 
 ```js
-dataChannel = RTCPeerConnection.createDataChannel(label[, options]);
+createDataChannel(label)
+createDataChannel(label, options)
 ```
 
 ### Parameters
@@ -73,7 +75,7 @@ dataChannel = RTCPeerConnection.createDataChannel(label[, options]);
         data channels are negotiated in-band,
         where one side calls `createDataChannel`, and
         the other side listens to the {{domxref("RTCDataChannelEvent")}} event
-        using the {{DOMxRef("RTCPeerConnection.ondatachannel", "ondatachannel")}} event handler.
+        using the {{DOMxRef("RTCPeerConnection.datachannel_event", "ondatachannel")}} event handler.
         Alternatively (`true`),
         they can be negotiated out of-band,
         where both sides call `createDataChannel`
@@ -98,7 +100,7 @@ included; otherwise, the defaults listed above are established.
 
 - `InvalidStateError` {{domxref("DOMException")}}
   - : Thrown if the {{domxref("RTCPeerConnection")}} is closed.
-- `TypeError` {{domxref("DOMException")}}
+- {{jsxref("TypeError")}}
   - : Thrown in the following situations:
     - The label and/or protocol string is too long; these cannot be longer than 65,535
       bytes (bytes, rather than characters).
@@ -125,8 +127,8 @@ This example shows how to create a data channel and set up handlers for the
 ```js
 // Offerer side
 
-var pc = new RTCPeerConnection(options);
-var channel = pc.createDataChannel("chat");
+const pc = new RTCPeerConnection(options);
+const channel = pc.createDataChannel("chat");
 channel.onopen = function(event) {
   channel.send('Hi you!');
 }
@@ -138,9 +140,9 @@ channel.onmessage = function(event) {
 ```js
 // Answerer side
 
-var pc = new RTCPeerConnection(options);
+const pc = new RTCPeerConnection(options);
 pc.ondatachannel = function(event) {
-  var channel = event.channel;
+  const channel = event.channel;
     channel.onopen = function(event) {
     channel.send('Hi back!');
   }
@@ -156,8 +158,8 @@ agreed-upon id (0 here):
 ```js
 // Both sides
 
-var pc = new RTCPeerConnection(options);
-var channel = pc.createDataChannel("chat", {negotiated: true, id: 0});
+const pc = new RTCPeerConnection(options);
+const channel = pc.createDataChannel("chat", {negotiated: true, id: 0});
 channel.onopen = function(event) {
   channel.send('Hi!');
 }
@@ -167,8 +169,7 @@ channel.onmessage = function(event) {
 ```
 
 For a more thorough example showing how the connection and channel are established, see
-[A simple
-RTCDataChannel sample](/en-US/docs/Web/API/WebRTC_API/Simple_RTCDataChannel_sample).
+[A simple RTCDataChannel sample](/en-US/docs/Web/API/WebRTC_API/Simple_RTCDataChannel_sample).
 
 ## Specifications
 
@@ -181,6 +182,5 @@ RTCDataChannel sample](/en-US/docs/Web/API/WebRTC_API/Simple_RTCDataChannel_samp
 ## See also
 
 - {{domxref("RTCDataChannel")}}
-- [A simple
-  RTCDataChannel sample](/en-US/docs/Web/API/WebRTC_API/Simple_RTCDataChannel_sample)
+- [A simple RTCDataChannel sample](/en-US/docs/Web/API/WebRTC_API/Simple_RTCDataChannel_sample)
 - {{domxref("RTCPeerConnection")}}

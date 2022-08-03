@@ -1,6 +1,7 @@
 ---
 title: A basic 2D WebGL animation example
 slug: Web/API/WebGL_API/Basic_2D_animation_example
+page-type: guide
 tags:
   - 2D Animation
   - 2D Graphics
@@ -117,7 +118,7 @@ let previousTime = 0.0;
 let degreesPerSecond = 90.0;
 ```
 
-Initializing the program is handled through a {{event("load")}} event handler called `startup()`:
+Initializing the program is handled through a {{domxref("Window/load_event", "load")}} event handler called `startup()`:
 
 ```js
 window.addEventListener("load", startup, false);
@@ -298,7 +299,7 @@ function animateScene() {
 
 The first thing that needs to be done in order to draw a frame of the animation is to clear the background to the desired color. In this case, we set the viewport based on the size of the {{HTMLElement("canvas")}}, call {{domxref("WebGLRenderingContext.clearColor", "clearColor()")}} to set the color to use when clearing content, then we clear the buffer with {{domxref("WebGLRenderingContext.clear", "clear()")}}.
 
-Next, the current rotation vector is computed by converting the current rotation in degrees (`currentAngle`) into {{interwiki("wikipedia", "radians")}}, then setting the first component of the rotation vector to the {{interwiki("wikipedia", "sine")}} of that value and the second component to the {{interwiki("wikipedia", "cosine")}}. The `currentRotation` vector is now the location of the point on the {{interwiki("wikipedia", "unit circle")}} located at the angle `currentAngle`.
+Next, the current rotation vector is computed by converting the current rotation in degrees (`currentAngle`) into [radians](https://en.wikipedia.org/wiki/Radians), then setting the first component of the rotation vector to the [sine](https://en.wikipedia.org/wiki/Sine) of that value and the second component to the [cosine](https://en.wikipedia.org/wiki/Cosine). The `currentRotation` vector is now the location of the point on the [unit circle](https://en.wikipedia.org/wiki/Unit_circle) located at the angle `currentAngle`.
 
 {{domxref("WebGLRenderingContext.useProgram", "useProgram()")}} is called to activate the GLSL shading program we established previously. Then we obtain the locations of each of the uniforms used to share information between the JavaScript code and the shaders (with {{domxref("WebGLRenderingContext.getUniformLocation", "getUniformLocation()")}}).
 
@@ -308,7 +309,7 @@ The uniform named `uScalingFactor` is set to the `currentScale` value previously
 
 `uGlobalColor` is set using {{domxref("WebGLRenderingContext/uniform", "uniform4fv()")}} to the color we wish to use when drawing the square. This is a 4-component floating-point vector (one component each for red, green, blue, and alpha).
 
-Now that that's all out of the way, we can set up the vertex buffer and draw our shape, first, the buffer of vertexes that will be used to draw the triangles of the shape is set by calling {{domxref("WebGLRenderingContext.bindBuffer", "bindBuffer()")}}. Then the vertex position attribute's index is obtained from the shader program by calling {{domxref("WebGLRenderingContext.getAttribLocation", "getAttribLocation()")}}.
+Now that's all out of the way, we can set up the vertex buffer and draw our shape, first, the buffer of vertexes that will be used to draw the triangles of the shape is set by calling {{domxref("WebGLRenderingContext.bindBuffer", "bindBuffer()")}}. Then the vertex position attribute's index is obtained from the shader program by calling {{domxref("WebGLRenderingContext.getAttribLocation", "getAttribLocation()")}}.
 
 With the index of the vertex position attribute now available in `aVertexPosition`, we call `enableVertexAttribArray()` to enable the position attribute so it can be used by the shader program (in particular, by the vertex shader).
 

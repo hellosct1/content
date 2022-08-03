@@ -1,6 +1,7 @@
 ---
 title: FileReader.readyState
 slug: Web/API/FileReader/readyState
+page-type: web-api-instance-property
 tags:
   - API
   - File API
@@ -26,10 +27,10 @@ The {{domxref("FileReader")}} **`readyState`** property provides the current sta
 - `DONE`
   - : The read operation is complete. This could mean that: the entire {{domxref("File")}} or {{domxref("Blob")}} has been read into memory, a file read error occurred, or {{domxref("FileReader.abort()", "abort()")}} was called and the read was cancelled.
 
-## Example
+## Examples
 
 ```js
-var reader = new FileReader();
+const reader = new FileReader();
 console.log('EMPTY', reader.readyState); // readyState will be 0
 
 reader.readAsText(blob);

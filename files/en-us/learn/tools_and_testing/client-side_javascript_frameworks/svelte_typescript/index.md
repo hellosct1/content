@@ -7,7 +7,7 @@ tags:
   - JavaScript
   - Learn
   - Svelte
-  - Typescript
+  - TypeScript
   - client-side
 ---
 
@@ -78,7 +78,7 @@ Remember to run `npm install && npm run dev` to start your app in development mo
 
 ### REPL
 
-Unfortunately, [TypeScript support is not yet available in the REPL](https://github.com/sveltejs/svelte-repl/issues/130).
+Unfortunately, [TypeScript support is not yet available in the REPL](https://github.com/sveltejs/sites/issues/156).
 
 ## TypeScript: optional static typing for JavaScript
 
@@ -90,7 +90,7 @@ Our TypeScript code will be able to run everywhere JavaScript can run. How is th
 
 > **Note:** If you are curious about how TypeScript transpiles our code to JavaScript, you can have a look at the [TypeScript Playground](https://www.typescriptlang.org/play/?target=1&e=4#example/hello-world).
 
-First-class TypeScript support has been Svelte's most requested feature for quite some time. Thanks to the hard work of the Svelte team, together with many contributors, we have an [official solution](https://svelte.dev/blog/svelte-and-typescript) ready to be put to the test. In this section we'll show you how to set up a Svelte project With TypeScript support to give it a try.
+First-class TypeScript support has been Svelte's most requested feature for quite some time. Thanks to the hard work of the Svelte team, together with many contributors, we have an [official solution](https://svelte.dev/blog/svelte-and-typescript) ready to be put to the test. In this section we'll show you how to set up a Svelte project with TypeScript support to give it a try.
 
 ## Why TypeScript?
 
@@ -350,14 +350,14 @@ Let's start with our `Alert.svelte` component.
 
 Now we'll do the same for the `MoreActions.svelte` component.
 
-1. Add the `lang='ts'` attribute, like before. TypeScript will warn us about the `todos` prop and the `t` variable in the call to `todos.filter(t =>...)`.
+1. Add the `lang='ts'` attribute, like before. TypeScript will warn us about the `todos` prop and the `t` variable in the call to `todos.filter((t) =>...)`.
 
     ```bash
     Warn: Variable 'todos' implicitly has an 'any' type, but a better type may be inferred from usage. (ts)
       export let todos
 
     Warn: Parameter 't' implicitly has an 'any' type, but a better type may be inferred from usage. (ts)
-      $: completedTodos = todos.filter(t => t.completed).length
+      $: completedTodos = todos.filter((t) => t.completed).length
     ```
 
 2. We will use the `TodoType` we already defined to tell TypeScript that `todos` is a `TodoType` array. Replace the `export let todos` line with the following:
@@ -368,7 +368,7 @@ Now we'll do the same for the `MoreActions.svelte` component.
     export let todos: TodoType[];
     ```
 
-Notice that now TypeScript can infer that the `t` variable in `todos.filter(t => t.completed)` is of type `TodoType`. Nevertheless, if we think it makes our code easier to read, we could specify it like this:
+Notice that now TypeScript can infer that the `t` variable in `todos.filter((t) => t.completed)` is of type `TodoType`. Nevertheless, if we think it makes our code easier to read, we could specify it like this:
 
 ```js
 $: completedTodos = todos.filter((t: TodoType) => t.completed).length;
@@ -377,7 +377,7 @@ $: completedTodos = todos.filter((t: TodoType) => t.completed).length;
 Most of the time, TypeScript will be able to correctly infer the reactive variable type, but sometimes you might get an "implicitly has an 'any' type" error when working with reactive assignments. In those cases you can declare the typed variable in a different statement, like this:
 
 ```js
-let completeTodos: number;
+let completedTodos: number;
 $: completedTodos = todos.filter((t: TodoType) => t.completed).length;
 ```
 
@@ -410,17 +410,17 @@ Now we'll take care of the `FilterButton` component.
     </script>
 
     <div class="filters btn-group stack-exception">
-      <button class="btn toggle-btn" class:btn__primary={filter === Filter.ALL} aria-pressed={filter === Filter.ALL} on:click={()=> filter = Filter.ALL} >
+      <button class="btn toggle-btn" class:btn__primary={filter === Filter.ALL} aria-pressed={filter === Filter.ALL} on:click={() => filter = Filter.ALL} >
         <span class="visually-hidden">Show</span>
         <span>All</span>
         <span class="visually-hidden">tasks</span>
       </button>
-      <button class="btn toggle-btn" class:btn__primary={filter === Filter.ACTIVE} aria-pressed={filter === Filter.ACTIVE} on:click={()=> filter = Filter.ACTIVE} >
+      <button class="btn toggle-btn" class:btn__primary={filter === Filter.ACTIVE} aria-pressed={filter === Filter.ACTIVE} on:click={() => filter = Filter.ACTIVE} >
         <span class="visually-hidden">Show</span>
         <span>Active</span>
         <span class="visually-hidden">tasks</span>
       </button>
-      <button class="btn toggle-btn" class:btn__primary={filter === Filter.COMPLETED} aria-pressed={filter === Filter.COMPLETED} on:click={()=> filter = Filter.COMPLETED} >
+      <button class="btn toggle-btn" class:btn__primary={filter === Filter.COMPLETED} aria-pressed={filter === Filter.COMPLETED} on:click={() => filter = Filter.COMPLETED} >
         <span class="visually-hidden">Show</span>
         <span>Completed</span>
         <span class="visually-hidden">tasks</span>
@@ -474,63 +474,61 @@ We will also use the `Filter` enum in the `Todos.svelte` component.
     Update your `<script>` section to look like this:
 
     ```js
-    <script lang='ts'>
-      import FilterButton from './FilterButton.svelte'
-      import Todo from './Todo.svelte'
-      import MoreActions from './MoreActions.svelte'
-      import NewTodo from './NewTodo.svelte'
-      import TodosStatus from './TodosStatus.svelte'
-      import { alert } from '../stores'
+    import FilterButton from './FilterButton.svelte'
+    import Todo from './Todo.svelte'
+    import MoreActions from './MoreActions.svelte'
+    import NewTodo from './NewTodo.svelte'
+    import TodosStatus from './TodosStatus.svelte'
+    import { alert } from '../stores'
 
-      import { Filter } from '../types/filter.enum'
+    import { Filter } from '../types/filter.enum'
 
-      import type { TodoType } from '../types/todo.type'
+    import type { TodoType } from '../types/todo.type'
 
-      export let todos: TodoType[] = []
+    export let todos: TodoType[] = []
 
-      let todosStatus: TodosStatus                   // reference to TodosStatus instance
+    let todosStatus: TodosStatus                   // reference to TodosStatus instance
 
-      $: newTodoId = todos.length > 0 ? Math.max(...todos.map(t => t.id)) + 1 : 1
+    $: newTodoId = todos.length > 0 ? Math.max(...todos.map((t) => t.id)) + 1 : 1
 
-      function addTodo(name: string) {
-        todos = [...todos, { id: newTodoId, name, completed: false }]
-        $alert = `Todo '${name}' has been added`
-      }
+    function addTodo(name: string) {
+      todos = [...todos, { id: newTodoId, name, completed: false }]
+      $alert = `Todo '${name}' has been added`
+    }
 
-      function removeTodo(todo: TodoType) {
-        todos = todos.filter(t => t.id !== todo.id)
-        todosStatus.focus()             // give focus to status heading
-        $alert = `Todo '${todo.name}' has been deleted`
-      }
+    function removeTodo(todo: TodoType) {
+      todos = todos.filter((t) => t.id !== todo.id)
+      todosStatus.focus()             // give focus to status heading
+      $alert = `Todo '${todo.name}' has been deleted`
+    }
 
-      function updateTodo(todo: TodoType) {
-        const i = todos.findIndex(t => t.id === todo.id)
-        if (todos[i].name !== todo.name)            $alert = `todo '${todos[i].name}' has been renamed to '${todo.name}'`
-        if (todos[i].completed !== todo.completed)  $alert = `todo '${todos[i].name}' marked as ${todo.completed ? 'completed' : 'active'}`
-        todos[i] = { ...todos[i], ...todo }
-      }
+    function updateTodo(todo: TodoType) {
+      const i = todos.findIndex((t) => t.id === todo.id)
+      if (todos[i].name !== todo.name)            $alert = `todo '${todos[i].name}' has been renamed to '${todo.name}'`
+      if (todos[i].completed !== todo.completed)  $alert = `todo '${todos[i].name}' marked as ${todo.completed ? 'completed' : 'active'}`
+      todos[i] = { ...todos[i], ...todo }
+    }
 
-      let filter: Filter = Filter.ALL
-      const filterTodos = (filter: Filter, todos: TodoType[]) =>
-        filter === Filter.ACTIVE ? todos.filter(t => !t.completed) :
-        filter === Filter.COMPLETED ? todos.filter(t => t.completed) :
-        todos
+    let filter: Filter = Filter.ALL
+    const filterTodos = (filter: Filter, todos: TodoType[]) =>
+      filter === Filter.ACTIVE ? todos.filter((t) => !t.completed) :
+      filter === Filter.COMPLETED ? todos.filter((t) => t.completed) :
+      todos
 
-      $: {
-        if (filter === Filter.ALL)               $alert = 'Browsing all todos'
-        else if (filter === Filter.ACTIVE)       $alert = 'Browsing active todos'
-        else if (filter === Filter.COMPLETED)    $alert = 'Browsing completed todos'
-      }
+    $: {
+      if (filter === Filter.ALL)               $alert = 'Browsing all todos'
+      else if (filter === Filter.ACTIVE)       $alert = 'Browsing active todos'
+      else if (filter === Filter.COMPLETED)    $alert = 'Browsing completed todos'
+    }
 
-      const checkAllTodos = (completed: boolean) => {
-        todos = todos.map(t => ({...t, completed}))
-        $alert = `${completed ? 'Checked' : 'Unchecked'} ${todos.length} todos`
-      }
-      const removeCompletedTodos = () => {
-        $alert = `Removed ${todos.filter(t => t.completed).length} todos`
-        todos = todos.filter(t => !t.completed)
-      }
-    </script>
+    const checkAllTodos = (completed: boolean) => {
+      todos = todos.map((t) => ({...t, completed}))
+      $alert = `${completed ? 'Checked' : 'Unchecked'} ${todos.length} todos`
+    }
+    const removeCompletedTodos = () => {
+      $alert = `Removed ${todos.filter((t) => t.completed).length} todos`
+      todos = todos.filter((t) => !t.completed)
+    }
     ```
 
 ### TodosStatus.svelte
@@ -765,7 +763,7 @@ import { localStore } from "./localStore";
 
 Now if we try to create a `localStore` with something that cannot be converted to JSON via `JSON.stringify()`, for example an object with a function as a property, VS Code/`validate` will complain about it:
 
-![vs code showing an error with using our store — it fails when trying to set a local storage value to something incompatible with json stringify](11-vscode-invalid-store.png)
+![vs code showing an error with using our store — it fails when trying to set a local storage value to something incompatible with JSON stringify](11-vscode-invalid-store.png)
 
 And best of all, it will even work with the [`$store` auto-subscription syntax](https://svelte.dev/docs#4_Prefix_stores_with_%24_to_access_their_values). If we try to save an invalid value to our `todos` store using the `$store` syntax, like this:
 

@@ -42,10 +42,10 @@ The following is an example of an object literal. The first element of the `car`
 var sales = 'BMW';
 
 function carTypes(name) {
-  if (name == 'Honda') {
+  if (name === 'Honda') {
     return name;
   } else {
-    return "Sorry, we don't sell " + name + ".";
+    return `Sorry, we don't sell ${name}.";
   }
 }
 
@@ -58,4 +58,4 @@ console.log(car.special); // BMW
 
 ## See also
 
-- {{interwiki("wikipedia", "Literal (computer programming)", "Literal")}} on Wikipedia
+- [Literal](https://en.wikipedia.org/wiki/Literal_(computer_programming)) on Wikipedia

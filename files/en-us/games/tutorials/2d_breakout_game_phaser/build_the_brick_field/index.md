@@ -36,12 +36,12 @@ Next, let's load the image of the brick — add the following `load.image()` cal
 
 ```js
 function preload() {
-    // ...
+    // …
     game.load.image('brick', 'img/brick.png');
 }
 ```
 
-You also need to [grab the brick image from Github](https://github.com/end3r/Gamedev-Phaser-Content-Kit/blob/gh-pages/demos/img/brick.png) and save it in your `/img` directory.
+You also need to [grab the brick image from GitHub](https://github.com/end3r/Gamedev-Phaser-Content-Kit/blob/gh-pages/demos/img/brick.png) and save it in your `/img` directory.
 
 ## Drawing the bricks
 
@@ -49,7 +49,7 @@ We will place all the code for drawing the bricks inside an `initBricks` functio
 
 ```js
 function create(){
-    // ...
+    // …
     initBricks();
 }
 ```

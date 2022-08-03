@@ -1,6 +1,7 @@
 ---
 title: BaseAudioContext.createPanner()
 slug: Web/API/BaseAudioContext/createPanner
+page-type: web-api-instance-method
 tags:
   - API
   - AudioContext
@@ -29,18 +30,22 @@ audio.
 ## Syntax
 
 ```js
-createPanner();
+createPanner()
 ```
 
-### Returns
+### Parameters
+
+None.
+
+### Return value
 
 A {{domxref("PannerNode")}}.
 
-## Example
+## Examples
 
 In the following example, you can see an example of how the `createPanner()`
 method, {{domxref("AudioListener")}}  and {{domxref("PannerNode")}} would be used to
-control audio spatialisation. Generally you will define the position in 3D space that
+control audio spatialization. Generally you will define the position in 3D space that
 your audio listener and panner (source) occupy initially, and then update the position
 of one or both of these as the application is used. You might be moving a character
 around inside a game world for example, and wanting delivery of audio to change
@@ -50,8 +55,7 @@ as a stereo. In the example you can see this being controlled by the functions
 panner position via the `PositionPanner()` function.
 
 To see a complete implementation, check out our [panner-node example](https://mdn.github.io/webaudio-examples/panner-node/)
-([view the
-source code](https://github.com/mdn/webaudio-examples/tree/master/panner-node)) — this demo transports you to the 2.5D "Room of metal", where you can
+([view the source code](https://github.com/mdn/webaudio-examples/tree/master/panner-node)) — this demo transports you to the 2.5D "Room of metal", where you can
 play a track on a boom box and then walk around the boom box to see how the sound
 changes!
 
@@ -63,19 +67,18 @@ new properties.
 
 ```js
 // set up listener and panner position information
-var WIDTH = window.innerWidth;
-var HEIGHT = window.innerHeight;
+const WIDTH = window.innerWidth;
+const HEIGHT = window.innerHeight;
 
-var xPos = Math.floor(WIDTH/2);
-var yPos = Math.floor(HEIGHT/2);
-var zPos = 295;
+const xPos = Math.floor(WIDTH/2);
+const yPos = Math.floor(HEIGHT/2);
+const zPos = 295;
 
 // define other variables
 
-var AudioContext = window.AudioContext || window.webkitAudioContext;
-var audioCtx = new AudioContext();
+const audioCtx = new AudioContext();
 
-var panner = audioCtx.createPanner();
+const panner = audioCtx.createPanner();
 panner.panningModel = 'HRTF';
 panner.distanceModel = 'inverse';
 panner.refDistance = 1;
@@ -93,9 +96,9 @@ if(panner.orientationX) {
   panner.setOrientation(1,0,0);
 }
 
-var listener = audioCtx.listener;
+const listener = audioCtx.listener;
 
-if(listener.forwardX) {
+if (listener.forwardX) {
   listener.forwardX.setValueAtTime(0, audioCtx.currentTime);
   listener.forwardY.setValueAtTime(0, audioCtx.currentTime);
   listener.forwardZ.setValueAtTime(-1, audioCtx.currentTime);
@@ -106,15 +109,15 @@ if(listener.forwardX) {
   listener.setOrientation(0,0,-1,0,1,0);
 }
 
-var source;
+let source;
 
-var play = document.querySelector('.play');
-var stop = document.querySelector('.stop');
+const play = document.querySelector('.play');
+const stop = document.querySelector('.stop');
 
-var boomBox = document.querySelector('.boom-box');
+const boomBox = document.querySelector('.boom-box');
 
-var listenerData = document.querySelector('.listener-data');
-var pannerData = document.querySelector('.panner-data');
+const listenerData = document.querySelector('.listener-data');
+const pannerData = document.querySelector('.panner-data');
 
 leftBound = (-xPos) + 50;
 rightBound = xPos - 50;

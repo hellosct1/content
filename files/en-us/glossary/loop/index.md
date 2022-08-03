@@ -60,7 +60,7 @@ while(i < 5){
     console.log(i)
     i++
 }
-//This loop  will print number 0-4, will stop when condition becomes false (i >=5)
+//This loop will print number 0-4, will stop when condition becomes false (i >=5)
 ```
 
 For the above example, the syntax is as follows:
@@ -69,7 +69,7 @@ For the above example, the syntax is as follows:
 
 ## See also
 
-- {{interwiki("wikipedia", "Control_flow#Loops","Control flow")}} on Wikipedia
+- [Control flow](https://en.wikipedia.org/wiki/Control_flow#Loops) on Wikipedia
 - [MDN Web Docs Glossary](/en-US/docs/Glossary)
 
   - {{Glossary("Loop")}}

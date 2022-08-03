@@ -18,7 +18,7 @@ browser-compat: html.elements.link
 The **`<link>`** [HTML](/en-US/docs/Web/HTML) element specifies relationships between the current document and an external resource.
 This element is most commonly used to link to {{Glossary("CSS", "stylesheets")}}, but is also used to establish site icons (both "favicon" style icons and icons for the home screen and apps on mobile devices) among other things.
 
-{{EmbedInteractiveExample("pages/tabbed/link.html")}}
+{{EmbedInteractiveExample("pages/tabbed/link.html", "tabbed-shorter")}}
 
 To link an external stylesheet, you'd include a `<link>` element inside your {{HTMLElement("head")}} like this:
 
@@ -183,6 +183,17 @@ This element includes the [global attributes](/en-US/docs/Web/HTML/Global_attrib
     Instead, the stylesheet will be loaded on-demand, if and when the `disabled` attribute is changed to `false` or removed.
 
     Setting the `disabled` property in the DOM causes the stylesheet to be removed from the document's {{domxref("Document.styleSheets")}} list.
+
+- {{htmlattrdef("fetchpriority")}}
+
+  - : Provides a hint of the relative priority to use when fetching a preloaded resource. Allowed values:
+
+    - `high`
+      - : Signals a high-priority fetch relative to other resources of the same type.
+    - `low`
+      - : Signals a low-priority fetch relative to other resources of the same type.
+    - `auto`
+      - : Default: Signals automatic determination of fetch priority relative to other resources of the same type.
 
 - {{HTMLAttrDef("href")}}
   - : This attribute specifies the {{glossary("URL")}} of the linked resource. A URL can be absolute or relative.

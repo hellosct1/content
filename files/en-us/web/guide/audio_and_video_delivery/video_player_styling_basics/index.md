@@ -14,7 +14,7 @@ In the previous [Cross browser video player article](/en-US/docs/Web/Guide/Audio
 
 ![A video player with play, stop, volume and fullscreen controls, showing an image of a soldier.](video-player-styled.png)
 
-You can find the code for the [updated, styled example](https://github.com/iandevlin/iandevlin.github.io/tree/master/mdn/video-player-styled) on Github, and [view it live](https://iandevlin.github.io/mdn/video-player-styled/).
+You can find the code for the [updated, styled example](https://github.com/iandevlin/iandevlin.github.io/tree/master/mdn/video-player-styled) on GitHub, and [view it live](https://iandevlin.github.io/mdn/video-player-styled/).
 
 ## Preliminary modifications from the original example
 
@@ -159,11 +159,11 @@ For example, the play/pause button has the following background image definition
 
 ```css
 .controls button[data-state="play"] {
-   background-image: url('data:image/png;base64,iVBORw0KGgoAAA ... ');
+   background-image: url('data:image/png;base64,iVBORw0KGgoAAA…');
 }
 
 .controls button[data-state="pause"] {
-   background-image: url('data:image/png;base64,iVBORw0KGgoAAA ... ');
+   background-image: url('data:image/png;base64,iVBORw0KGgoAAA…');
 }
 ```
 
@@ -253,7 +253,7 @@ Now that the buttons actually look like buttons and have images that indicate wh
 ```js
 var changeButtonState = function(type) {
    // Play/Pause button
-   if (type == 'playpause') {
+   if (type === 'playpause') {
       if (video.paused || video.ended) {
          playpause.setAttribute('data-state', 'play');
       }
@@ -262,7 +262,7 @@ var changeButtonState = function(type) {
       }
    }
    // Mute button
-   else if (type == 'mute') {
+   else if (type === 'mute') {
       mute.setAttribute('data-state', video.muted ? 'unmute' : 'mute');
    }
 }

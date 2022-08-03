@@ -1,6 +1,7 @@
 ---
 title: Animation.finish()
 slug: Web/API/Animation/finish
+page-type: web-api-instance-method
 tags:
   - API
   - Animation
@@ -22,7 +23,7 @@ That is, if the animation is playing forward, it sets the playback time to the l
 ## Syntax
 
 ```js
-Animation.finish();
+finish()
 ```
 
 ### Parameters
@@ -31,7 +32,7 @@ None.
 
 ### Return value
 
-None.
+None ({{jsxref("undefined")}}).
 
 ### Exceptions
 
@@ -46,10 +47,12 @@ The following example shows how to use the `finish()` method and catch an `Inval
 interfaceElement.addEventListener("mousedown", function() {
   try {
     player.finish();
-  } catch(e if e instanceof InvalidState) {
-    console.log("finish() called on paused or finished animation.");
-  } catch(e);
-    logMyErrors(e); //pass exception object to error handler
+  } catch(e) {
+    if (e instanceof InvalidState) {
+      console.log("finish() called on paused or finished animation.");
+    } else {
+      logMyErrors(e); //pass exception object to error handler
+    }
   }
 });
 ```

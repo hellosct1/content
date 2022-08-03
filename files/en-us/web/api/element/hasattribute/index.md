@@ -1,6 +1,7 @@
 ---
 title: Element.hasAttribute()
 slug: Web/API/Element/hasAttribute
+page-type: web-api-instance-method
 tags:
   - API
   - DOM
@@ -18,18 +19,22 @@ specified attribute or not.
 ## Syntax
 
 ```js
-var result = element.hasAttribute(name);
+hasAttribute(name)
 ```
 
-- `result`
-  - : holds the return value `true` or `false`.
+### Parameters
+
 - `name`
   - : is a string representing the name of the attribute.
 
-## Example
+### Return value
+
+A boolean.
+
+## Examples
 
 ```js
-var foo = document.getElementById("foo");
+const foo = document.getElementById("foo");
 if (foo.hasAttribute("bar")) {
     // do something
 }

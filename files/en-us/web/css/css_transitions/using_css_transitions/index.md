@@ -38,11 +38,11 @@ You can control the individual components of the transition with the following s
 - {{cssxref("transition-duration")}}
   - : Specifies the duration over which transitions should occur. You can specify a single duration that applies to all properties during the transition, or multiple values to allow each property to transition over a different period of time.
 - {{cssxref("transition-timing-function")}}
-  - : Specifies a function to define how intermediate values for properties are computed. _Timing functions_ determine how intermediate values of the transition are calculated. Most [timing functions](/en-US/docs/Web/CSS/easing-function) can be specified by providing the graph of the corresponding function, as defined by four points defining a cubic bezier. You can also choose easing from [Easing Functions Cheat Sheet](http://easings.net/).
+  - : Specifies a function to define how intermediate values for properties are computed. _Timing functions_ determine how intermediate values of the transition are calculated. Most [timing functions](/en-US/docs/Web/CSS/easing-function) can be specified by providing the graph of the corresponding function, as defined by four points defining a cubic bezier. You can also choose easing from [Easing Functions Cheat Sheet](https://easings.net/).
 - {{cssxref("transition-delay")}}
   - : Defines how long to wait between the time a property is changed and the transition actually begins.
 
-The shorthand CSS syntax is written as follows:
+The `transition` shorthand CSS syntax is written as follows:
 
 ```css
 div {
@@ -231,7 +231,7 @@ With CSS you can make it smooth without any extra effort. Add a transition to th
 
 ### Detecting the start and completion of a transition
 
-You can use the {{event("transitionend")}} event to detect that an animation has finished running. This is a {{domxref("TransitionEvent")}} object, which has two added properties beyond a typical {{domxref("Event")}} object:
+You can use the {{domxref("HTMLElement/transitionend_event", "transitionend")}} event to detect that an animation has finished running. This is a {{domxref("TransitionEvent")}} object, which has two added properties beyond a typical {{domxref("Event")}} object:
 
 - `propertyName`
   - : A string indicating the name of the CSS property whose transition completed.
@@ -244,7 +244,7 @@ As usual, you can use the {{domxref("EventTarget.addEventListener", "addEventLis
 el.addEventListener("transitionend", updateTransition, true);
 ```
 
-You detect the beginning of a transition using {{event("transitionrun")}} (fires before any delay) and {{event("transitionstart")}} (fires after any delay), in the same kind of fashion:
+You detect the beginning of a transition using {{domxref("HTMLElement/transitionrun_event", "transitionrun")}} (fires before any delay) and {{domxref("HTMLElement/transitionstart_event", "transitionstart")}} (fires after any delay), in the same kind of fashion:
 
 ```js
 el.addEventListener("transitionrun", signalStart, true);
@@ -259,5 +259,5 @@ el.addEventListener("transitionstart", signalStart, true);
 
 ## See also
 
-- The {{domxref("TransitionEvent")}} interface and the {{event("transitionend")}} event.
+- The {{domxref("TransitionEvent")}} interface and the {{domxref("HTMLElement/transitionend_event", "transitionend")}} event.
 - [Using CSS animations](/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)

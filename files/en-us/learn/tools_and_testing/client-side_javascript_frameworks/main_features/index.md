@@ -234,11 +234,11 @@ import AuthorCredit from "./components/AuthorCredit";
 Once that's done, `AuthorCredit` could be used inside the `Article` component like this:
 
 ```js
-  ...
+// …
 
 <AuthorCredit />
 
-  ...
+// …
 ```
 
 ### Dependency injection
@@ -263,7 +263,7 @@ The problem of passing data through many layers of components is called prop dri
 
 To circumvent prop drilling, frameworks provide functionality known as dependency injection, which is a way to get certain data directly to the components that need it, without passing it through intervening levels. Each framework implements dependency injection under a different name, and in a different way, but the effect is ultimately the same.
 
-Angular calls this process [dependency injection](https://angular.io/guide/dependency-injection); Vue has [`provide()` and `inject()` component methods](https://vuejs.org/v2/api/#provide-inject); React has a [Context API](https://reactjs.org/docs/context.html); Ember shares state through [services](https://guides.emberjs.com/release/services/).
+Angular calls this process [dependency injection](https://angular.io/guide/dependency-injection); Vue has [`provide()` and `inject()` component methods](https://v2.vuejs.org/v2/api/#provide-inject); React has a [Context API](https://reactjs.org/docs/context.html); Ember shares state through [services](https://guides.emberjs.com/release/services/).
 
 ### Lifecycle
 
@@ -308,7 +308,7 @@ import "@testing-library/jest-dom/extend-expect";
 
 import CounterButton from "./CounterButton";
 
-it("renders a semantic with an initial state of 0", () => {
+it("Renders a semantic button with an initial state of 0", () => {
   const { getByRole } = render(<CounterButton />);
   const btn = getByRole("button");
 

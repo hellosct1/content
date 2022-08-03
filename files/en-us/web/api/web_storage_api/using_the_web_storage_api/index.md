@@ -1,6 +1,7 @@
 ---
 title: Using the Web Storage API
 slug: Web/API/Web_Storage_API/Using_the_Web_Storage_API
+page-type: guide
 tags:
   - API
   - Guide
@@ -8,6 +9,9 @@ tags:
   - Web Storage API
   - localStorage
   - sessionStorage
+browser-compat:
+  - api.Window.localStorage
+  - api.Window.sessionStorage
 ---
 {{DefaultAPISidebar("Web Storage API")}}
 
@@ -25,7 +29,7 @@ localStorage['colorSetting'] = '#a4509b';
 localStorage.setItem('colorSetting', '#a4509b');
 ```
 
-> **Note:** It's recommended to use the Web Storage API (`setItem`, `getItem`, `removeItem`, `key`, `length`) to prevent the [pitfalls](https://www.2ality.com/2012/01/objects-as-maps.html) associated with using plain objects as key-value stores.
+> **Note:** It's recommended to use the Web Storage API (`setItem`, `getItem`, `removeItem`, `key`, `length`) to prevent the [pitfalls](https://2ality.com/2012/01/objects-as-maps.html) associated with using plain objects as key-value stores.
 
 The two mechanisms within Web Storage are as follows:
 
@@ -52,10 +56,10 @@ Here is a function that detects whether localStorage is both supported and avail
 
 ```js
 function storageAvailable(type) {
-    var storage;
+    let storage;
     try {
         storage = window[type];
-        var x = '__storage_test__';
+        const x = '__storage_test__';
         storage.setItem(x, x);
         storage.removeItem(x);
         return true;
@@ -129,15 +133,15 @@ For example:
 
 ```js
 function setStyles() {
-  var currentColor = localStorage.getItem('bgcolor');
-  var currentFont = localStorage.getItem('font');
-  var currentImage = localStorage.getItem('image');
+  const currentColor = localStorage.getItem('bgcolor');
+  const currentFont = localStorage.getItem('font');
+  const currentImage = localStorage.getItem('image');
 
   document.getElementById('bgcolor').value = currentColor;
   document.getElementById('font').value = currentFont;
   document.getElementById('image').value = currentImage;
 
-  htmlElem.style.backgroundColor = '#' + currentColor;
+  htmlElem.style.backgroundColor = `#${currentColor}`;
   pElem.style.fontFamily = currentFont;
   imgElem.setAttribute('src', currentImage);
 }
@@ -198,19 +202,11 @@ Web Storage also provides a couple of simple methods to remove data. We don't us
 
 ## Specifications
 
-| Specification                                                                | Status                           | Comment |
-| ---------------------------------------------------------------------------- | -------------------------------- | ------- |
-| {{SpecName('HTML WHATWG', 'webstorage.html#webstorage')}} | {{Spec2('HTML WHATWG')}} |         |
+{{Specifications}}
 
 ## Browser compatibility
 
-### `Window.localStorage`
-
-{{Compat("api.Window.localStorage")}}
-
-### `Window.sessionStorage`
-
-{{Compat("api.Window.sessionStorage")}}
+{{Compat}}
 
 All browsers have varying capacity levels for both localStorage and sessionStorage. Here is a [detailed rundown of all the storage capacities for various browsers](http://dev-test.nemikor.com/web-storage/support-test/).
 

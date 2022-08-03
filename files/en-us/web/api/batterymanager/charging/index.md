@@ -1,6 +1,7 @@
 ---
 title: BatteryManager.charging
 slug: Web/API/BatteryManager/charging
+page-type: web-api-instance-property
 tags:
   - API
   - Property
@@ -13,7 +14,11 @@ The **`BatteryManager.charging`** property is a Boolean value indicating whether
 
 If the battery is charging, this value is `true`. Otherwise, it is `false`.
 
-## Example
+## Value
+
+A boolean.
+
+## Examples
 
 ### HTML Content
 
@@ -24,14 +29,14 @@ If the battery is charging, this value is `true`. Otherwise, it is `false`.
 ### JavaScript Content
 
 ```js
-navigator.getBattery().then(battery => {
+navigator.getBattery().then((battery) => {
     const charging = battery.charging;
 
     document.querySelector('#charging').textContent = charging ;
 });
 ```
 
-{{ EmbedLiveSample('Example', '100%', 30) }}
+{{ EmbedLiveSample('Examples', '100%', 30) }}
 
 ## Specifications
 
