@@ -2,17 +2,9 @@
 title: A basic 2D WebGL animation example
 slug: Web/API/WebGL_API/Basic_2D_animation_example
 page-type: guide
-tags:
-  - 2D Animation
-  - 2D Graphics
-  - Animation
-  - Drawing
-  - Example
-  - Graphics
-  - WebGL
-  - WebGL API
 ---
-{{WebGLSidebar}}
+
+{{DefaultAPISidebar("WebGL")}}
 
 In this WebGL example, we create a canvas and within it render a rotating square using WebGL. The coordinate system we use to represent our scene is the same as the canvas's coordinate system. That is, (0, 0) is at the top-left corner and the bottom-right corner is at (600, 460).
 
@@ -114,6 +106,8 @@ let aVertexPosition;
 
 // Animation timing
 
+let shaderProgram;
+let currentAngle;
 let previousTime = 0.0;
 let degreesPerSecond = 90.0;
 ```
@@ -130,23 +124,22 @@ function startup() {
   const shaderSet = [
     {
       type: gl.VERTEX_SHADER,
-      id: "vertex-shader"
+      id: "vertex-shader",
     },
     {
       type: gl.FRAGMENT_SHADER,
-      id: "fragment-shader"
-    }
+      id: "fragment-shader",
+    },
   ];
 
   shaderProgram = buildShaderProgram(shaderSet);
 
-  aspectRatio = glCanvas.width/glCanvas.height;
+  aspectRatio = glCanvas.width / glCanvas.height;
   currentRotation = [0, 1];
   currentScale = [1.0, aspectRatio];
 
   vertexArray = new Float32Array([
-      -0.5, 0.5, 0.5, 0.5, 0.5, -0.5,
-      -0.5, 0.5, 0.5, -0.5, -0.5, -0.5
+    -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5,
   ]);
 
   vertexBuffer = gl.createBuffer();
@@ -154,7 +147,7 @@ function startup() {
   gl.bufferData(gl.ARRAY_BUFFER, vertexArray, gl.STATIC_DRAW);
 
   vertexNumComponents = 2;
-  vertexCount = vertexArray.length/vertexNumComponents;
+  vertexCount = vertexArray.length / vertexNumComponents;
 
   currentAngle = 0.0;
 
@@ -186,17 +179,17 @@ The `buildShaderProgram()` function accepts as input an array of objects describ
 
 ```js
 function buildShaderProgram(shaderInfo) {
-  let program = gl.createProgram();
+  const program = gl.createProgram();
 
-  shaderInfo.forEach(function(desc) {
-    let shader = compileShader(desc.id, desc.type);
+  shaderInfo.forEach((desc) => {
+    const shader = compileShader(desc.id, desc.type);
 
     if (shader) {
       gl.attachShader(program, shader);
     }
   });
 
-  gl.linkProgram(program)
+  gl.linkProgram(program);
 
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
     console.log("Error linking shader program:");
@@ -225,14 +218,18 @@ The `compileShader()` function, below, is called by `buildShaderProgram()` to co
 
 ```js
 function compileShader(id, type) {
-  let code = document.getElementById(id).firstChild.nodeValue;
-  let shader = gl.createShader(type);
+  const code = document.getElementById(id).firstChild.nodeValue;
+  const shader = gl.createShader(type);
 
   gl.shaderSource(shader, code);
   gl.compileShader(shader);
 
   if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-    console.log(`Error compiling ${type === gl.VERTEX_SHADER ? "vertex" : "fragment"} shader:`);
+    console.log(
+      `Error compiling ${
+        type === gl.VERTEX_SHADER ? "vertex" : "fragment"
+      } shader:`
+    );
     console.log(gl.getShaderInfoLog(shader));
   }
   return shader;
@@ -257,18 +254,15 @@ function animateScene() {
   gl.clearColor(0.8, 0.9, 1.0, 1.0);
   gl.clear(gl.COLOR_BUFFER_BIT);
 
-  let radians = currentAngle * Math.PI / 180.0;
+  const radians = (currentAngle * Math.PI) / 180.0;
   currentRotation[0] = Math.sin(radians);
   currentRotation[1] = Math.cos(radians);
 
   gl.useProgram(shaderProgram);
 
-  uScalingFactor =
-      gl.getUniformLocation(shaderProgram, "uScalingFactor");
-  uGlobalColor =
-      gl.getUniformLocation(shaderProgram, "uGlobalColor");
-  uRotationVector =
-      gl.getUniformLocation(shaderProgram, "uRotationVector");
+  uScalingFactor = gl.getUniformLocation(shaderProgram, "uScalingFactor");
+  uGlobalColor = gl.getUniformLocation(shaderProgram, "uGlobalColor");
+  uRotationVector = gl.getUniformLocation(shaderProgram, "uRotationVector");
 
   gl.uniform2fv(uScalingFactor, currentScale);
   gl.uniform2fv(uRotationVector, currentRotation);
@@ -276,18 +270,23 @@ function animateScene() {
 
   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
 
-  aVertexPosition =
-      gl.getAttribLocation(shaderProgram, "aVertexPosition");
+  aVertexPosition = gl.getAttribLocation(shaderProgram, "aVertexPosition");
 
   gl.enableVertexAttribArray(aVertexPosition);
-  gl.vertexAttribPointer(aVertexPosition, vertexNumComponents,
-        gl.FLOAT, false, 0, 0);
+  gl.vertexAttribPointer(
+    aVertexPosition,
+    vertexNumComponents,
+    gl.FLOAT,
+    false,
+    0,
+    0
+  );
 
   gl.drawArrays(gl.TRIANGLES, 0, vertexCount);
 
-  window.requestAnimationFrame(function(currentTime) {
-    let deltaAngle = ((currentTime - previousTime) / 1000.0)
-          * degreesPerSecond;
+  requestAnimationFrame((currentTime) => {
+    const deltaAngle =
+      ((currentTime - previousTime) / 1000.0) * degreesPerSecond;
 
     currentAngle = (currentAngle + deltaAngle) % 360;
 

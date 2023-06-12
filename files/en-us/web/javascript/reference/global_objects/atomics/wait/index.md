@@ -1,19 +1,16 @@
 ---
 title: Atomics.wait()
 slug: Web/JavaScript/Reference/Global_Objects/Atomics/wait
-tags:
-  - Atomics
-  - JavaScript
-  - Method
-  - Shared Memory
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Atomics.wait
 ---
+
 {{JSRef}}
 
-The static **`Atomics.wait()`**
+The **`Atomics.wait()`** static
 method verifies that a given position in an {{jsxref("Int32Array")}} still contains a
-given value and if so sleeps, awaiting a wakeup or a timeout. It returns a string which
-is either "`ok`", "`not-equal`", or "`timed-out`".
+given value and if so sleeps, awaiting a wake-up notification or times out. It returns a string which
+is either `"ok"`, `"not-equal"`, or `"timed-out"`.
 
 > **Note:** This operation only works with a shared
 > {{jsxref("Int32Array")}} or {{jsxref("BigInt64Array")}} and may not be allowed on the main thread.
@@ -21,7 +18,7 @@ is either "`ok`", "`not-equal`", or "`timed-out`".
 
 ## Syntax
 
-```js
+```js-nolint
 Atomics.wait(typedArray, index, value)
 Atomics.wait(typedArray, index, value, timeout)
 ```
@@ -39,15 +36,14 @@ Atomics.wait(typedArray, index, value, timeout)
 
 ### Return value
 
-A string which is either "`ok`", "`not-equal`", or
-"`timed-out`".
+A string which is either `"ok"`, `"not-equal"`, or `"timed-out"`.
 
 ### Exceptions
 
-- Throws a {{jsxref("TypeError")}}, if `typedArray` is not a
-  shared {{jsxref("Int32Array")}}.
-- Throws a {{jsxref("RangeError")}}, if `index` is out of bounds
-  in the `typedArray`.
+- {{jsxref("TypeError")}}
+  - : Thrown if `typedArray` is not a shared {{jsxref("Int32Array")}}.
+- {{jsxref("RangeError")}}
+  - : Thrown if `index` is out of bounds in the `typedArray`.
 
 ## Examples
 

@@ -1,12 +1,8 @@
 ---
-title: FileReader()
+title: "FileReader: FileReader() constructor"
+short-title: FileReader()
 slug: Web/API/FileReader/FileReader
 page-type: web-api-constructor
-tags:
-  - API
-  - Constructor
-  - FileReader
-  - Reference
 browser-compat: api.FileReader.FileReader
 ---
 
@@ -18,7 +14,7 @@ For details about how to use `FileReader`, see [Using files from web application
 
 ## Syntax
 
-```js
+```js-nolint
 new FileReader()
 ```
 
@@ -33,7 +29,7 @@ The following code snippet shows creation of a [`FileReader`](/en-US/docs/Web/AP
 ```js
 function printFile(file) {
   const reader = new FileReader();
-  reader.onload = function(evt) {
+  reader.onload = (evt) => {
     console.log(evt.target.result);
   };
   reader.readAsText(file);

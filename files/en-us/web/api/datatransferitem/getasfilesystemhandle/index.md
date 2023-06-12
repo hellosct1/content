@@ -1,16 +1,14 @@
 ---
-title: DataTransferItem.getAsFileSystemHandle()
+title: "DataTransferItem: getAsFileSystemHandle() method"
+short-title: getAsFileSystemHandle()
 slug: Web/API/DataTransferItem/getAsFileSystemHandle
 page-type: web-api-instance-method
-tags:
-  - DataTransferItem
-  - Directory
-  - File
-  - File System Access API
-  - Method
+status:
+  - experimental
 browser-compat: api.DataTransferItem.getAsFileSystemHandle
 ---
-{{securecontext_header}}{{DefaultAPISidebar("HTML Drag and Drop API")}}
+
+{{securecontext_header}}{{APIRef("HTML Drag and Drop API")}}{{SeeCompatTable}}
 
 The **`getAsFileSystemHandle()`** method of the
 {{domxref("DataTransferItem")}} interface returns a {{domxref('FileSystemFileHandle')}}
@@ -19,7 +17,7 @@ dragged item is a directory.
 
 ## Syntax
 
-```js
+```js-nolint
 getAsFileSystemHandle()
 ```
 
@@ -41,22 +39,22 @@ This example uses the `getAsFileSystemHandle` method to return
 {{domxref('FileSystemHandle','file handles')}} for dropped items.
 
 ```js
-elem.addEventListener('dragover', (e) => {
+elem.addEventListener("dragover", (e) => {
   // Prevent navigation.
   e.preventDefault();
 });
-elem.addEventListener('drop', async (e) => {
+elem.addEventListener("drop", async (e) => {
   // Prevent navigation.
   e.preventDefault();
 
   // Process all of the items.
   for (const item of e.dataTransfer.items) {
     // kind will be 'file' for file/directory entries.
-    if (item.kind === 'file') {
-    const entry = await item.getAsFileSystemHandle();
-      if (entry.kind === 'file') {
+    if (item.kind === "file") {
+      const entry = await item.getAsFileSystemHandle();
+      if (entry.kind === "file") {
         // run code for if entry is a file
-      } else if (entry.kind === 'directory') {
+      } else if (entry.kind === "directory") {
         // run code for is entry is a directory
       }
     }

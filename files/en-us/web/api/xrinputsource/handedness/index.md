@@ -1,27 +1,11 @@
 ---
-title: XRInputSource.handedness
+title: "XRInputSource: handedness property"
+short-title: handedness
 slug: Web/API/XRInputSource/handedness
 page-type: web-api-instance-property
-tags:
-  - API
-  - AR
-  - Controller
-  - Handedness
-  - Input
-  - Property
-  - Read-only
-  - Reference
-  - VR
-  - WebXR
-  - WebXR API
-  - WebXR Device API
-  - XR
-  - XRInputSource
-  - hand
-  - left
-  - right
 browser-compat: api.XRInputSource.handedness
 ---
+
 {{APIRef("WebXR Device API")}}
 
 The read-only {{domxref("XRInputSource")}} property
@@ -53,9 +37,9 @@ One important usage scenario for `handedness` is to determine which hand a contr
 
 ```js
 function updateInputSources(session, frame, refSpace) {
-  for (let source of session.inputSources) {
+  for (const source of session.inputSources) {
     if (source.gripSpace) {
-      let gripPose = frame.getPose(source.gripSpace, refSpace);
+      const gripPose = frame.getPose(source.gripSpace, refSpace);
 
       if (gripPose) {
         myRenderHandObject(gripPose, inputSource.handedness);

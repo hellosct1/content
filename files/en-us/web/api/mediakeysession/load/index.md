@@ -1,18 +1,11 @@
 ---
-title: MediaKeySession.load()
+title: "MediaKeySession: load() method"
+short-title: load()
 slug: Web/API/MediaKeySession/load
 page-type: web-api-instance-method
-tags:
-  - API
-  - EncryptedMediaExtensions
-  - Experimental
-  - MediaKeySession
-  - Method
-  - NeedsExample
-  - Reference
-  - load
 browser-compat: api.MediaKeySession.load
 ---
+
 {{APIRef("EncryptedMediaExtensions")}}
 
 The `MediaKeySession.load()` method returns a {{jsxref('Promise')}} that
@@ -20,7 +13,7 @@ resolves to a boolean value after loading data for a specified session object.
 
 ## Syntax
 
-```js
+```js-nolint
 load(sessionId)
 ```
 

@@ -1,17 +1,11 @@
 ---
-title: 'Element: animationiteration event'
+title: "Element: animationiteration event"
+short-title: animationiteration
 slug: Web/API/Element/animationiteration_event
-tags:
-  - API
-  - Animation
-  - AnimationEvent
-  - CSS Animations
-  - Event
-  - Element
-  - Reference
-browser-compat: api.Element.animationiteration_event
 page-type: web-api-event
+browser-compat: api.Element.animationiteration_event
 ---
+
 {{APIRef}}
 
 The **`animationiteration`** event is fired when an iteration of a [CSS Animation](/en-US/docs/Web/CSS/CSS_Animations) ends, and another one begins. This event does not occur at the same time as the {{domxref("Element/animationend_event", "animationend")}} event, and therefore does not occur for animations with an `animation-iteration-count` of one.
@@ -21,9 +15,9 @@ The **`animationiteration`** event is fired when an iteration of a [CSS Animatio
 Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
 
 ```js
-addEventListener('animationiteration', (event) => {});
+addEventListener("animationiteration", (event) => {});
 
-onanimationiteration = (event) => { };
+onanimationiteration = (event) => {};
 ```
 
 ## Event type
@@ -36,11 +30,11 @@ An {{domxref("AnimationEvent")}}. Inherits from {{domxref("Event")}}.
 
 _Also inherits properties from its parent {{domxref("Event")}}_.
 
-- {{domxref("AnimationEvent.animationName")}} {{readonlyInline}}
+- {{domxref("AnimationEvent.animationName")}} {{ReadOnlyInline}}
   - : A string containing the value of the {{cssxref("animation-name")}} that generated the animation.
-- {{domxref("AnimationEvent.elapsedTime")}} {{readonlyInline}}
+- {{domxref("AnimationEvent.elapsedTime")}} {{ReadOnlyInline}}
   - : A `float` giving the amount of time the animation has been running, in seconds, when this event fired, excluding any time the animation was paused. For an `animationstart` event, `elapsedTime` is `0.0` unless there was a negative value for {{cssxref("animation-delay")}}, in which case the event will be fired with `elapsedTime` containing `(-1 * delay)`.
-- {{domxref("AnimationEvent.pseudoElement")}} {{readonlyInline}}
+- {{domxref("AnimationEvent.pseudoElement")}} {{ReadOnlyInline}}
   - : A string, starting with `'::'`, containing the name of the [pseudo-element](/en-US/docs/Web/CSS/Pseudo-elements) the animation runs on. If the animation doesn't run on a pseudo-element but on the element, an empty string: `''`.
 
 ## Examples
@@ -48,11 +42,11 @@ _Also inherits properties from its parent {{domxref("Event")}}_.
 This code uses `animationiteration` to keep track of the number of iterations an animation has completed:
 
 ```js
-const animated = document.querySelector('.animated');
+const animated = document.querySelector(".animated");
 
 let iterationCount = 0;
 
-animated.addEventListener('animationiteration', () => {
+animated.addEventListener("animationiteration", () => {
   iterationCount++;
   console.log(`Animation iteration count: ${iterationCount}`);
 });
@@ -61,7 +55,7 @@ animated.addEventListener('animationiteration', () => {
 The same, but using the `onanimationiteration` event handler property:
 
 ```js
-const animated = document.querySelector('.animated');
+const animated = document.querySelector(".animated");
 
 let iterationCount = 0;
 
@@ -77,11 +71,11 @@ animated.onanimationiteration = () => {
 
 ```html
 <div class="animation-example">
-    <div class="container">
-        <p class="animation">You chose a cold night to visit our planet.</p>
-    </div>
-    <button class="activate" type="button">Activate animation</button>
-    <div class="event-log"></div>
+  <div class="container">
+    <p class="animation">You chose a cold night to visit our planet.</p>
+  </div>
+  <button class="activate" type="button">Activate animation</button>
+  <div class="event-log"></div>
 </div>
 ```
 
@@ -116,43 +110,45 @@ animated.onanimationiteration = () => {
 }
 ```
 
-#### JS
+#### JavaScript
 
 ```js
-const animation = document.querySelector('p.animation');
-const animationEventLog = document.querySelector('.animation-example>.event-log');
-const applyAnimation = document.querySelector('.animation-example>button.activate');
+const animation = document.querySelector("p.animation");
+const animationEventLog = document.querySelector(
+  ".animation-example>.event-log"
+);
+const applyAnimation = document.querySelector(
+  ".animation-example>button.activate"
+);
 let iterationCount = 0;
 
-animation.addEventListener('animationstart', () => {
+animation.addEventListener("animationstart", () => {
   animationEventLog.textContent = `${animationEventLog.textContent}'animation started' `;
 });
 
-animation.addEventListener('animationiteration', () => {
+animation.addEventListener("animationiteration", () => {
   iterationCount++;
   animationEventLog.textContent = `${animationEventLog.textContent}'animation iterations: ${iterationCount}' `;
 });
 
-animation.addEventListener('animationend', () => {
+animation.addEventListener("animationend", () => {
   animationEventLog.textContent = `${animationEventLog.textContent}'animation ended'`;
-  animation.classList.remove('active');
+  animation.classList.remove("active");
   applyAnimation.textContent = "Activate animation";
 });
 
-animation.addEventListener('animationcancel', () => {
+animation.addEventListener("animationcancel", () => {
   animationEventLog.textContent = `${animationEventLog.textContent}'animation canceled'`;
 });
 
-applyAnimation.addEventListener('click', () => {
-  animation.classList.toggle('active');
-  animationEventLog.textContent = '';
+applyAnimation.addEventListener("click", () => {
+  animation.classList.toggle("active");
+  animationEventLog.textContent = "";
   iterationCount = 0;
-  let active = animation.classList.contains('active');
-  if (active) {
-    applyAnimation.textContent = "Cancel animation";
-  } else {
-    applyAnimation.textContent = "Activate animation";
-  }
+  const active = animation.classList.contains("active");
+  applyAnimation.textContent = active
+    ? "Cancel animation"
+    : "Activate animation";
 });
 ```
 

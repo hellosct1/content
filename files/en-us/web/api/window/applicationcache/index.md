@@ -1,20 +1,15 @@
 ---
-title: Window.applicationCache
+title: "Window: applicationCache property"
+short-title: applicationCache
 slug: Web/API/Window/applicationCache
 page-type: web-api-instance-property
-tags:
-  - API
-  - Deprecated
-  - HTML DOM
-  - NeedsCompatTable
-  - NeedsExample
-  - NeedsSpecTable
-  - Property
-  - Reference
-  - Window
+status:
+  - deprecated
+  - non-standard
 browser-compat: api.SharedWorkerGlobalScope.applicationCache
 ---
-{{APIRef}}{{Deprecated_Header}}{{Non-standard_Header}}{{securecontext_header}}
+
+{{APIRef}}{{Deprecated_Header}}{{Non-standard_Header}}{{SecureContext_Header}}
 
 > **Warning:**: Application cache is being removed from web platform. Consider using [service workers](/en-US/docs/Web/API/Service_Worker_API) instead.
 

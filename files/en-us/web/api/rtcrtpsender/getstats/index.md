@@ -1,19 +1,11 @@
 ---
-title: RTCRtpSender.getStats()
+title: "RTCRtpSender: getStats() method"
+short-title: getStats()
 slug: Web/API/RTCRtpSender/getStats
 page-type: web-api-instance-method
-tags:
-  - API
-  - Media
-  - Method
-  - RTCRtpSender
-  - Reference
-  - WebRTC
-  - WebRTC Statistics
-  - WebRTC Statistics API
-  - getStats
 browser-compat: api.RTCRtpSender.getStats
 ---
+
 {{APIRef("WebRTC")}}
 
 The {{domxref("RTCRtpSender")}} method **`getStats()`**
@@ -24,7 +16,7 @@ available.
 
 ## Syntax
 
-```js
+```js-nolint
 getStats()
 ```
 
@@ -49,9 +41,8 @@ an element's {{domxref("HTMLElement/innerText", "innerText")}} to display the cu
 trip time for requests on the sender.
 
 ```js
-sender.getStats().then(function(stats) {
-  document.getElementById("currentRTT").innerText =
-          stats.roundTripTime;
+sender.getStats().then((stats) => {
+  document.getElementById("currentRTT").innerText = stats.roundTripTime;
 });
 ```
 

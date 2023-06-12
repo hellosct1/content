@@ -2,20 +2,17 @@
 title: MDN Web Docs Repositories
 slug: MDN/Community/Contributing/Our_repositories
 page-type: mdn-community-guide
-tags:
-  - meta
-  - community-guidelines
-  - governance
 ---
+
 {{MDNSidebar}}
 
-[MDN Web Docs](https://developer.mozilla.org) is a complex project with lots of moving parts. It's a good idea to get familiar with the projects different repositories. This document intends to help you find the different repositories (repos) you may need when contributing to different parts of the MDN Web Docs project.
+[MDN Web Docs](/) is a complex project with lots of moving parts. It's a good idea to get familiar with the projects different repositories. This document intends to help you find the different repositories (repos) you may need when contributing to different parts of the MDN Web Docs project.
 
 ## Repository tiers
 
 ### Tier 1
 
-Code in these repositories are core to the MDN Web Docs project and runs on https://developer.mozilla.org, or another Mozilla owned domain.
+Code in these repositories is core to the MDN Web Docs project and runs on Mozilla-owned domains.
 
 - [mdn/content](https://github.com/mdn/content)
 - [Yari](https://github.com/mdn/yari)
@@ -28,7 +25,7 @@ A Tier 1 project should have at least 3 members, including at least two with adm
 
 ### Tier 2
 
-These repositories are mainly concentrated on supporting content such as code examples, the MDN Web Docs learn area, localisation, and examples projects. Examples include:
+These repositories are mainly concentrated on supporting content such as code examples, the MDN Web Docs learn area, localization, and examples projects. Examples include:
 
 - [dom-examples](https://github.com/mdn/dom-examples)
 - [translated-content](https://github.com/mdn/translated-content)
@@ -64,7 +61,7 @@ A Tier 3 project needs 1 admin.
 
 [//]: # "TODO: UPDATE WITH REPO TRIAGE"
 
-The MDN Web Docs GitHub org contains a huge number of example repos. These generally contain free-standing code examples that are often linked to from our pages, but occasionally you’ll find one of these examples embedded into a page using a macro call like this — `{{EmbedGHLiveSample("css-examples/learn/tasks/grid/grid1.html", '100%', 700)}}`.
+The MDN Web Docs GitHub org contains a huge number of example repos. These generally contain free-standing code examples that are often linked to from our pages, but occasionally you'll find one of these examples embedded into a page using a macro call like this — `\{{EmbedGHLiveSample("css-examples/learn/tasks/grid/grid1.html", '100%', 700)}}`.
 
 Always remember, if you are updating the code on any given page, you'll need to update the corresponding example repo as well.
 
@@ -77,7 +74,6 @@ Always remember, if you are updating the code on any given page, you'll need to 
 - [**html-examples**](https://github.com/mdn/html-examples)
 - [**web-components-examples**](https://github.com/mdn/web-components-examples)
 - [**webextension-examples**](https://github.com/mdn/webextensions-examples)
-- [**webgl-examples**](https://github.com/mdn/webgl-examples)
 - [**pwa-examples**](https://github.com/mdn/pwa-examples)
 - [**houdini-examples**](https://github.com/mdn/houdini-examples)
 - [**headless-examples**](https://github.com/mdn/headless-examples)

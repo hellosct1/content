@@ -1,18 +1,14 @@
 ---
-title: Navigator.contacts
+title: "Navigator: contacts property"
+short-title: contacts
 slug: Web/API/Navigator/contacts
 page-type: web-api-instance-property
-tags:
-  - Contact Picker API
-  - Contacts
-  - Navigator
-  - PWA
-  - Property
-  - Read-only
-  - contact picker
+status:
+  - experimental
 browser-compat: api.Navigator.contacts
 ---
-{{DefaultAPISidebar("Contact Picker API")}}
+
+{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
 The **`contacts`** read-only property of the
 {{domxref("Navigator")}} interface returns a {{domxref('ContactsManager')}} interface
@@ -28,7 +24,7 @@ A {{domxref('ContactsManager')}} object. Two successive calls return the same ob
 The following code checks whether the Contact Picker API is supported.
 
 ```js
-const supported = ('contacts' in navigator && 'ContactsManager' in window);
+const supported = "contacts" in navigator && "ContactsManager" in window;
 ```
 
 ## Specifications

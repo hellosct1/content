@@ -1,21 +1,15 @@
 ---
-title: Navigator.activeVRDisplays
+title: "Navigator: activeVRDisplays property"
+short-title: activeVRDisplays
 slug: Web/API/Navigator/activeVRDisplays
 page-type: web-api-instance-property
-tags:
-  - API
-  - Deprecated
-  - HTML DOM
-  - Navigator
-  - Property
-  - Reference
-  - VR
-  - Virtual Reality
-  - WebVR
-  - activeVRDisplays
+status:
+  - deprecated
+  - non-standard
 browser-compat: api.Navigator.activeVRDisplays
 ---
-{{securecontext_header}}{{DefaultAPISidebar("WebVR API")}}{{deprecated_header}}
+
+{{APIRef("WebVR API")}}{{SecureContext_Header}}{{Deprecated_Header}}{{Non-standard_Header}}
 
 The **`activeVRDisplays`** read-only property of the
 {{domxref("Navigator")}} interface returns an array containing every
@@ -33,8 +27,8 @@ An array of {{domxref("VRDisplay")}} objects.
 ```js
 function showActive() {
   const displays = navigator.activeVRDisplays;
-  for (let i = 0; i < displays.length; i++) {
-    console.log(`Display ${displays[i].displayId} is active.`);
+  for (const display of displays) {
+    console.log(`Display ${display.displayId} is active.`);
   }
 }
 ```

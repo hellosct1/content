@@ -1,9 +1,6 @@
 ---
 title: Introducing asynchronous JavaScript
 slug: Learn/JavaScript/Asynchronous/Introducing
-tags:
-  - JavaScript
-  - Learn
 ---
 
 {{LearnSidebar}}{{NextMenu("Learn/JavaScript/Asynchronous/Promises", "Learn/JavaScript/Asynchronous")}}
@@ -45,7 +42,7 @@ In this article, we'll start by looking at the problem with long-running synchro
 Consider the following code:
 
 ```js
-const name = 'Miriam';
+const name = "Miriam";
 const greeting = `Hello, my name is ${name}!`;
 console.log(greeting);
 // "Hello, my name is Miriam!"
@@ -66,7 +63,7 @@ function makeGreeting(name) {
   return `Hello, my name is ${name}!`;
 }
 
-const name = 'Miriam';
+const name = "Miriam";
 const greeting = makeGreeting(name);
 console.log(greeting);
 // "Hello, my name is Miriam!"
@@ -82,7 +79,7 @@ The program below uses a very inefficient algorithm to generate multiple large p
 
 ```html
 <label for="quota">Number of primes:</label>
-<input type="text" id="quota" name="quota" value="1000000">
+<input type="text" id="quota" name="quota" value="1000000" />
 
 <button id="generate">Generate primes</button>
 <button id="reload">Reload</button>
@@ -91,38 +88,40 @@ The program below uses a very inefficient algorithm to generate multiple large p
 ```
 
 ```js
-function generatePrimes(quota) {
+const MAX_PRIME = 1000000;
 
-  function isPrime(n) {
-    for (let c = 2; c <= Math.sqrt(n); ++c) {
-      if (n % c === 0) {
-          return false;
-       }
+function isPrime(n) {
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
     }
-    return true;
   }
+  return n > 1;
+}
 
+const random = (max) => Math.floor(Math.random() * max);
+
+function generatePrimes(quota) {
   const primes = [];
-  const maximum = 1000000;
-
   while (primes.length < quota) {
-    const candidate = Math.floor(Math.random() * (maximum + 1));
+    const candidate = random(MAX_PRIME);
     if (isPrime(candidate)) {
       primes.push(candidate);
     }
   }
-
   return primes;
 }
 
-document.querySelector('#generate').addEventListener('click', () => {
-  const quota = document.querySelector('#quota').value;
-  const primes = generatePrimes(quota);
-  document.querySelector('#output').textContent = `Finished generating ${quota} primes!`;
+const quota = document.querySelector("#quota");
+const output = document.querySelector("#output");
+
+document.querySelector("#generate").addEventListener("click", () => {
+  const primes = generatePrimes(quota.value);
+  output.textContent = `Finished generating ${quota.value} primes!`;
 });
 
-document.querySelector('#reload').addEventListener('click', () => {
-  document.location.reload()
+document.querySelector("#reload").addEventListener("click", () => {
+  document.location.reload();
 });
 ```
 
@@ -138,7 +137,7 @@ You'll find that while our `generatePrimes()` function is running, our program i
 
 ```html hidden
 <label for="quota">Number of primes:</label>
-<input type="text" id="quota" name="quota" value="1000000">
+<input type="text" id="quota" name="quota" value="1000000" />
 
 <button id="generate">Generate primes</button>
 <button id="reload">Reload</button>
@@ -148,7 +147,6 @@ Try typing in here immediately after pressing "Generate primes"
 </textarea>
 
 <div id="output"></div>
-
 ```
 
 ```css hidden
@@ -159,38 +157,39 @@ textarea {
 ```
 
 ```js hidden
-function generatePrimes(quota) {
+const MAX_PRIME = 1000000;
 
-  function isPrime(n) {
-    for (let c = 2; c <= Math.sqrt(n); ++c) {
-      if (n % c === 0) {
-          return false;
-       }
+function isPrime(n) {
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
     }
-    return true;
   }
+  return n > 1;
+}
 
+const random = (max) => Math.floor(Math.random() * max);
+
+function generatePrimes(quota) {
   const primes = [];
-  const maximum = 1000000;
-
   while (primes.length < quota) {
-    const candidate = Math.floor(Math.random() * (maximum + 1));
+    const candidate = random(MAX_PRIME);
     if (isPrime(candidate)) {
       primes.push(candidate);
     }
   }
-
   return primes;
 }
 
-document.querySelector('#generate').addEventListener('click', () => {
-  const quota = document.querySelector('#quota').value;
-  const primes = generatePrimes(quota);
-  document.querySelector('#output').textContent = `Finished generating ${quota} primes!`;
+const quota = document.querySelector("#quota");
+const output = document.querySelector("#output");
+
+document.querySelector("#generate").addEventListener("click", () => {
+  const primes = generatePrimes(quota.value);
+  output.textContent = `Finished generating ${quota.value} primes!`;
 });
 
-document.querySelector('#reload').addEventListener('click', () => {
-  document.querySelector('#user-input').value = 'Try typing in here immediately after pressing "Generate primes"';
+document.querySelector("#reload").addEventListener("click", () => {
   document.location.reload();
 });
 ```
@@ -230,23 +229,27 @@ pre {
 ```
 
 ```js
-const log = document.querySelector('.event-log');
+const log = document.querySelector(".event-log");
 
-document.querySelector('#xhr').addEventListener('click', () => {
-  log.textContent = '';
+document.querySelector("#xhr").addEventListener("click", () => {
+  log.textContent = "";
 
   const xhr = new XMLHttpRequest();
 
-  xhr.addEventListener('loadend', () => {
+  xhr.addEventListener("loadend", () => {
     log.textContent = `${log.textContent}Finished with status: ${xhr.status}`;
   });
 
-  xhr.open('GET', 'https://raw.githubusercontent.com/mdn/content/main/files/en-us/_wikihistory.json');
+  xhr.open(
+    "GET",
+    "https://raw.githubusercontent.com/mdn/content/main/files/en-us/_wikihistory.json"
+  );
   xhr.send();
-  log.textContent = `${log.textContent}Started XHR request\n`;});
+  log.textContent = `${log.textContent}Started XHR request\n`;
+});
 
-document.querySelector('#reload').addEventListener('click', () => {
-  log.textContent = '';
+document.querySelector("#reload").addEventListener("click", () => {
+  log.textContent = "";
   document.location.reload();
 });
 ```
@@ -311,7 +314,6 @@ function doOperation() {
       });
     });
   });
-
 }
 
 doOperation();
@@ -324,11 +326,3 @@ When we nest callbacks like this, it can also get very hard to handle errors: of
 For these reasons, most modern asynchronous APIs don't use callbacks. Instead, the foundation of asynchronous programming in JavaScript is the {{jsxref("Promise")}}, and that's the subject of the next article.
 
 {{NextMenu("Learn/JavaScript/Asynchronous/Promises", "Learn/JavaScript/Asynchronous")}}
-
-## In this module
-
-- **Introducing asynchronous JavaScript**
-- [How to use promises](/en-US/docs/Learn/JavaScript/Asynchronous/Promises)
-- [Implementing a promise-based API](/en-US/docs/Learn/JavaScript/Asynchronous/Implementing_a_promise-based_API)
-- [Introducing workers](/en-US/docs/Learn/JavaScript/Asynchronous/Introducing_workers)
-- [Assessment: sequencing animations](/en-US/docs/Learn/JavaScript/Asynchronous/Sequencing_animations)

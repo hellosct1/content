@@ -1,16 +1,11 @@
 ---
-title: RTCPeerConnection.setConfiguration()
+title: "RTCPeerConnection: setConfiguration() method"
+short-title: setConfiguration()
 slug: Web/API/RTCPeerConnection/setConfiguration
 page-type: web-api-instance-method
-tags:
-  - Configuration
-  - Method
-  - RTCPeerConnection
-  - Reference
-  - WebRTC
-  - setConfiguration
 browser-compat: api.RTCPeerConnection.setConfiguration
 ---
+
 {{APIRef("WebRTC")}}
 
 The **`RTCPeerConnection.setConfiguration()`** method sets the
@@ -34,7 +29,7 @@ this might be done:
 
 ## Syntax
 
-```js
+```js-nolint
 setConfiguration(configuration)
 ```
 
@@ -68,22 +63,24 @@ In this example, it has already been determined that ICE restart is needed, and 
 
 ```js
 const restartConfig = {
-  iceServers: [{
-    urls: "turn:asia.myturnserver.net",
-    username: "allie@oopcode.com",
-    credential: "topsecretpassword"
-  }]
+  iceServers: [
+    {
+      urls: "turn:asia.myturnserver.net",
+      username: "allie@oopcode.com",
+      credential: "topsecretpassword",
+    },
+  ],
 };
 
 myPeerConnection.setConfiguration(restartConfig);
 
-myPeerConnection.createOffer({"iceRestart": true}).then(function(offer) {
-  return myPeerConnection.setLocalDescription(offer);
-})
-.then(function() {
-  // send the offer to the other peer using the signaling server
-})
-.catch(reportError);
+myPeerConnection
+  .createOffer({ iceRestart: true })
+  .then((offer) => myPeerConnection.setLocalDescription(offer))
+  .then(() => {
+    // send the offer to the other peer using the signaling server
+  })
+  .catch(reportError);
 ```
 
 First, a new object is created, `restartConfig`,

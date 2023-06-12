@@ -1,18 +1,12 @@
 ---
-title: CredentialsContainer.preventSilentAccess()
+title: "CredentialsContainer: preventSilentAccess() method"
+short-title: preventSilentAccess()
 slug: Web/API/CredentialsContainer/preventSilentAccess
 page-type: web-api-instance-method
-tags:
-  - API
-  - Credential Management API
-  - CredentialsContainer
-  - Method
-  - NeedsExample
-  - Reference
-  - credential management
 browser-compat: api.CredentialsContainer.preventSilentAccess
 ---
-{{APIRef("Credential Management API")}}{{SeeCompatTable}}
+
+{{APIRef("Credential Management API")}}
 
 The **`preventSilentAccess()`** method
 of the {{domxref("CredentialsContainer")}} interface sets a flag that specifies
@@ -30,7 +24,7 @@ The [Browser compatibility](/en-US/docs/Web/API/CredentialsContainer#browser_com
 
 ## Syntax
 
-```js
+```js-nolint
 preventSilentAccess()
 ```
 

@@ -1,21 +1,12 @@
 ---
-title: MediaTrackSupportedConstraints.sampleSize
+title: "MediaTrackSupportedConstraints: sampleSize property"
+short-title: sampleSize
 slug: Web/API/MediaTrackSupportedConstraints/sampleSize
 page-type: web-api-instance-property
-tags:
-  - API
-  - Constraints
-  - Media
-  - Media Capture and Streams API
-  - Media Streams API
-  - MediaTrackSupportedConstraints
-  - Property
-  - Reference
-  - WebRTC
-  - sampleSize
 browser-compat: api.MediaTrackSupportedConstraints.sampleSize
 ---
-{{DefaultAPISidebar("Media Capture and Streams")}}
+
+{{APIRef("Media Capture and Streams")}}
 
 The {{domxref("MediaTrackSupportedConstraints")}} dictionary's
 **`sampleSize`** property is a read-only Boolean value which is
@@ -38,8 +29,7 @@ get {{jsxref("undefined")}} if you try to look at its value.
 ## Examples
 
 ```html hidden
-<div id="result">
-</div>
+<div id="result"></div>
 ```
 
 ```css hidden
@@ -49,13 +39,9 @@ get {{jsxref("undefined")}} if you try to look at its value.
 ```
 
 ```js
-let result = document.getElementById("result");
-
-if (navigator.mediaDevices.getSupportedConstraints().sampleSize) {
-  result.textContent = "Supported!";
-} else {
-  result.textContent = "Not supported!";
-}
+const result = document.getElementById("result");
+const supported = navigator.mediaDevices.getSupportedConstraints().sampleSize;
+result.textContent = supported ? "Supported!" : "Not supported!";
 ```
 
 ### Result
@@ -72,7 +58,7 @@ if (navigator.mediaDevices.getSupportedConstraints().sampleSize) {
 
 ## See also
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Streams_API)
+- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
 - {{domxref("MediaStreamTrack")}}

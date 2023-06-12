@@ -1,26 +1,19 @@
 ---
-title: FileSystemWritableFileStream.seek()
+title: "FileSystemWritableFileStream: seek() method"
+short-title: seek()
 slug: Web/API/FileSystemWritableFileStream/seek
 page-type: web-api-instance-method
-tags:
-  - File
-  - File System Access API
-  - FileSystemWritableFileStream
-  - Method
-  - stream
-  - write
 browser-compat: api.FileSystemWritableFileStream.seek
 ---
-{{securecontext_header}}{{DefaultAPISidebar("File System Access API")}}
 
-The **`seek()`** method of the
-{{domxref("FileSystemWritableFileStream")}} interface updates the current file cursor
-offset to the position (in bytes) specified when calling the method.
+{{securecontext_header}}{{APIRef("File System Access API")}}
+
+The **`seek()`** method of the {{domxref("FileSystemWritableFileStream")}} interface updates the current file cursor offset to the position (in bytes) specified when calling the method.
 
 ## Syntax
 
-```js
-FileSystemWritableStream.seek(position).then(/* … */);
+```js-nolint
+seek(position)
 ```
 
 ### Parameters

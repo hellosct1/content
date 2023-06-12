@@ -1,20 +1,17 @@
 ---
-title: SVGStyleElement.type
+title: "SVGStyleElement: type property"
+short-title: type
 slug: Web/API/SVGStyleElement/type
 page-type: web-api-instance-property
-tags:
-  - API
-  - Property
-  - Reference
-  - SVG
-  - SVG DOM
-  - Deprecated
+status:
+  - deprecated
 browser-compat: api.SVGStyleElement.type
 ---
+
 {{APIRef("SVG")}} {{Deprecated_Header}}
 
 The **`SVGStyleElement.type`** property returns the type of the current style.
-The value mirrors the [SVG `<style>` element's `type` attribute](/en-US/docs/Web/SVG/Element/style#type).
+The value reflects the associated SVG `<style>` element's [`type`](/en-US/docs/Web/SVG/Element/style#type) attribute.
 
 Authors should not use this property or rely on the value.
 

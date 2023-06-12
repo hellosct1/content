@@ -1,20 +1,12 @@
 ---
-title: MediaDevices.getSupportedConstraints()
+title: "MediaDevices: getSupportedConstraints() method"
+short-title: getSupportedConstraints()
 slug: Web/API/MediaDevices/getSupportedConstraints
 page-type: web-api-instance-method
-tags:
-  - API
-  - Media
-  - Media Capture and Streams API
-  - Media Streams API
-  - MediaDevices
-  - Method
-  - Reference
-  - WebRTC
-  - getSupportedConstraints
 browser-compat: api.MediaDevices.getSupportedConstraints
 ---
-{{DefaultAPISidebar("Media Capture and Streams")}}
+
+{{APIRef("Media Capture and Streams")}}
 
 The
 **`getSupportedConstraints()`**
@@ -24,7 +16,7 @@ specify one of the constrainable properties the {{Glossary("user agent")}} under
 
 ## Syntax
 
-```js
+```js-nolint
 getSupportedConstraints()
 ```
 
@@ -46,8 +38,7 @@ This example outputs a list of the constraints supported by your browser.
 ```html hidden
 <p>The following media constraints are supported by your browser:</p>
 
-<ul id="constraintList">
-</ul>
+<ul id="constraintList"></ul>
 ```
 
 ```css hidden

@@ -1,30 +1,20 @@
 ---
-title: HTMLCanvasElement.captureStream()
+title: "HTMLCanvasElement: captureStream() method"
+short-title: captureStream()
 slug: Web/API/HTMLCanvasElement/captureStream
 page-type: web-api-instance-method
-tags:
-  - Canvas
-  - Experimental
-  - Frame Capture
-  - HTMLCanvasElement
-  - Interface
-  - Media
-  - Media Capture DOM Elements
-  - Method
-  - Reference
-  - Web
-  - captureStream
 browser-compat: api.HTMLCanvasElement.captureStream
 ---
-{{DefaultAPISidebar("Media Capture and Streams")}}
+
+{{APIRef("Media Capture and Streams")}}
 
 The {{domxref("HTMLCanvasElement")}} **`captureStream()`** method returns a {{domxref("MediaStream")}}
 which includes a {{domxref("CanvasCaptureMediaStreamTrack")}} containing a real-time video capture of the canvas's contents.
 
 ## Syntax
 
-```js
-MediaStream = canvas.captureStream(frameRate);
+```js-nolint
+captureStream(frameRate)
 ```
 
 ### Parameters
@@ -45,13 +35,18 @@ A reference to a {{domxref("MediaStream")}} object, which has a single
 ### Exceptions
 
 - `NotSupportedError` {{domxref("DOMException")}}
+
   - : Thrown if the value of `frameRate` is negative.
+
+- `SecurityError` {{domxref("DOMException")}}
+  - : The canvas's bitmap is not origin clean;
+    at least some of its contents have or may have been loaded from a site other than the one from which the document itself was loaded.
 
 ## Example
 
 ```js
 // Find the canvas element to capture
-const canvasElt = document.querySelector('canvas');
+const canvasElt = document.querySelector("canvas");
 
 // Get the stream
 const stream = canvasElt.captureStream(25); // 25 FPS

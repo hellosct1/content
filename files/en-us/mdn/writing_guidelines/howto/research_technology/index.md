@@ -1,11 +1,9 @@
 ---
 title: How to research a technology
 slug: MDN/Writing_guidelines/Howto/Research_technology
-tags:
-  - meta
-  - writing-guide
 page-type: mdn-writing-guide
 ---
+
 {{MDNSidebar}}
 
 This article gives you some handy information about approaching how to document technologies.
@@ -32,7 +30,7 @@ Useful resources for writing any documentation include:
 3. The latest modern web browsers:
    These should be experimental/alpha builds such as [Firefox Nightly](https://www.mozilla.org/en-US/firefox/channel/desktop/)/[Chrome Canary](https://www.google.com/intl/en/chrome/canary/) that are more likely to support the features you are documenting.
    This is especially pertinent if you are documenting a feature that is 'upcoming'.
-4. Demos/blog posts/other info: Find as much info as you can. If you are updating a technology because it has changed,  ensure that the resources you are using to learn are not out of date. This is why the first two points above are important.
+4. Demos/blog posts/other info: Find as much info as you can. If you are updating a technology because it has changed, ensure that the resources you are using to learn are not out of date. This is why the first two points above are important.
 
 It can also be wise to try and find someone to help answer questions. This can be the specification authors or the engineers who implement browser features.
 
@@ -45,12 +43,11 @@ This can feel a little alien to start, but the more you do it the more you get u
 - [How to read web specs Part I – Or: WebVR, how do you work?](https://surma.dev/things/reading-specs/) talks through reading the WebVR spec specifically, but is a great introduction to reading Web API specs.
 - [How to read web specs Part IIa – Or: ECMAScript Symbols](https://surma.dev/things/reading-specs-2/) the second part to the link above contains information on understanding the ECMAScript specification which outlines the JavaScript language
 
-In addition, we have a guide on [Information contained in a WebIDL file](/en-us/docs/MDN/Writing_guidelines/Howto/Write_an_API_reference/Information_contained_in_a_WebIDL_file), which can really help when reading Web API specs.
+In addition, we have a guide on [Information contained in a WebIDL file](/en-US/docs/MDN/Writing_guidelines/Howto/Write_an_API_reference/Information_contained_in_a_WebIDL_file), which can really help when reading Web API specs.
 
 ## Explore the feature
 
 You will return to writing code examples or building demos many times through the course of documenting a technology, but it is very useful to start by spending time familiarizing yourself with how the technology works. This is a really valuable exercise because it gives you a good understanding of what the use cases are (_why_ a developer would use this technology) and help with creating some code examples at the same time.
-
 
 > **Note:** If the specification has been recently updated so that, say, a method is now defined differently, but the old method still works in browsers, you will often have to document both in the same place so that the old and new methods are covered.
 > If you need help, refer to demos you have found, or ask an engineering contact.
@@ -61,11 +58,13 @@ The different pages that you need to write from scratch or update varies dependi
 
 ### Sidebars
 
-It's possible that the sidebar of the pages you write will also need to be defined or updated. To find out if this is needed and how to do it, [check out our sidebar guide](/en-us/docs/MDN/Writing_guidelines/Howto/Write_an_API_reference/Sidebars).
+It's possible that the sidebar of the pages you write will also need to be defined or updated. To find out if this is needed and how to do it, [check out our sidebar guide](/en-US/docs/MDN/Writing_guidelines/Howto/Write_an_API_reference/Sidebars).
 
 ### Code examples
 
-Some of the code examples for MDN Web Docs are held in separate repositories (most notably, these are interactive examples at the top of pages and larger demo code needed for guides). You can find a handy [list of them here](/en-us/docs/MDN/Writing_guidelines/Page_structures/Code_examples) to find which one you should add to. If you do need to add to or amend one of these repos, it's a good idea to make a note of it in your list.
+Some of the code examples for MDN Web Docs are held in separate repositories. Most notably, these are the interactive examples that appear in the "Try it" section in the reference pages and the larger demo code needed for guides. If you do need to add to or amend one of these repositories, it's a good idea to make a note of it in your list.
+
+This [article](/en-US/docs/MDN/Writing_guidelines/Page_structures/Code_examples) describes the different types of code examples we use on MDN Web Docs.
 
 ### Example
 
@@ -109,7 +108,6 @@ You can then expand on it with more details, adding each interface and it's memb
   - start
   - end
   - …
-
 
 ## Open an issue
 

@@ -1,18 +1,12 @@
 ---
-title: MediaStream.getTrackById()
+title: "MediaStream: getTrackById() method"
+short-title: getTrackById()
 slug: Web/API/MediaStream/getTrackById
 page-type: web-api-instance-method
-tags:
-  - Media
-  - MediaStream
-  - MediaStream API
-  - Method
-  - Reference
-  - WebRTC
-  - getTrackById
 browser-compat: api.MediaStream.getTrackById
 ---
-{{DefaultAPISidebar("Media Capture and Streams")}}
+
+{{APIRef("Media Capture and Streams")}}
 
 The **`MediaStream.getTrackById()`** method returns a
 {{domxref("MediaStreamTrack")}} object representing the track with the specified ID
@@ -21,7 +15,7 @@ string. If there is no track with the specified ID, this method returns
 
 ## Syntax
 
-```js
+```js-nolint
 getTrackById(id)
 ```
 

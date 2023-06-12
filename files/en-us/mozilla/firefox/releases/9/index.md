@@ -1,11 +1,8 @@
 ---
 title: Firefox 9 for developers
 slug: Mozilla/Firefox/Releases/9
-tags:
-  - Firefox
-  - Firefox 9
-  - Gecko 9
 ---
+
 {{FirefoxSidebar}}
 
 Firefox 9 was released for Windows on December 20, 2011. Mac and Linux version 9.0.1, which fixed a crashing bug discovered at the last minute, were released on December 21, 2011.
@@ -14,13 +11,13 @@ Firefox 9 was released for Windows on December 20, 2011. Mac and Linux version 9
 
 ### HTML
 
-- The `value` attribute of {{ HTMLElement("li") }} now can be negative as specified in HTML5. Previously negative values were converted to 0.
+- The `value` attribute of {{ HTMLElement("li") }} now can be negative. Previously negative values were converted to 0.
 - You can now [specify the start and stop time of media](/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#specifying_playback_range) in the URI of the media when using {{ HTMLElement("audio") }} and {{ HTMLElement("video") }} elements.
 - {{ HTMLElement("input") }} and {{ HTMLElement("textarea") }} elements [now respect the value of the `lang` attribute](/en-US/docs/Web/HTML/Global_attributes/spellcheck#controlling_the_spellchecker_language) when invoking the spell checker.
 - Firefox on Android now lets users snap photos with their phone's camera without leaving the browser when the {{ HTMLElement("input") }} element is used with `type="file"` and `accept="image/*"`.
 - Windows Vista style PNG ICO images are now supported.
 - Drawing images that use the [`crossorigin`](/en-US/docs/Web/HTML/Attributes/crossorigin) attribute to request CORS access no longer incorrectly [taint the canvas](/en-US/docs/Web/HTML/CORS_enabled_image#what_is_a_.22tainted.22_canvas.3f) when CORS is granted.
-- The value of the {{ htmlattrxref("rowspan", "td") }} attribute may now be as large as 65,534, up from 8190.
+- The value of the [`rowspan`](/en-US/docs/Web/HTML/Element/td#rowspan) attribute may now be as large as 65,534, up from 8190.
 
 ### CSS
 
@@ -67,7 +64,7 @@ _No change._
 ### MathML
 
 - The non-standard `restyle` value for the `actiontype` attribute on {{ MathMLElement("maction") }} elements has been removed.
-- While still unsupported, using the `mlabeledtr` element no longer breaks rendering completely. See {{ bug(689641) }} for progress on actual support of this element.
+- While still unsupported, using the `mlabeledtr` element no longer breaks rendering completely. See [Firefox bug 689641](https://bugzil.la/689641) for progress on actual support of this element.
 
 ### Networking
 
@@ -100,7 +97,7 @@ See [Updating add-ons for Firefox 9](/en-US/docs/Mozilla/Firefox/Updating_add-on
 
 ### Service changes
 
-- The content preference service now [handles private mode browsing](/en-US/docs/Using_content_preferences#private-browsing) (see {{ bug("679784") }}).
+- The content preference service now [handles private mode browsing](/en-US/docs/Using_content_preferences#private-browsing) (see [Firefox bug 679784](https://bugzil.la/679784)).
 
 ### NSPR
 

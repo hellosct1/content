@@ -2,11 +2,9 @@
 title: What we write
 slug: MDN/Writing_guidelines/What_we_write
 page-type: mdn-writing-guide
-tags:
-  - meta
-  - writing-guide
 ---
-{{MDNSidebar}}  
+
+{{MDNSidebar}}
 
 MDN Web Docs contains _browser-neutral_ documentation that enables web developers to write _browser-agnostic_ code. In this article, you'll find information about whether or not a given topic and/or type of content should be included on MDN Web Docs.
 
@@ -24,7 +22,7 @@ Outbound links to commercial sites that are relevant to the topic from which the
 
 Articles on MDN Web Docs must maintain a [neutral point-of-view](https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view), reporting on browser variations without editorial bias. Derogatory comments about any browser or user agent is not acceptable.
 
-### Open web topics
+### Standardization
 
 Web technologies to be documented on MDN Web Docs should be on a standards track and must be implemented by at least one rendering engine. Variations in browser support are documented in the [browser compatibility](/en-US/docs/MDN/Writing_guidelines/Page_structures/Compatibility_tables) section of an article.
 
@@ -34,7 +32,7 @@ If you'd like to suggest content for MDN Web Docs, please make sure you read thi
 
 For new reference pages or guides, please open a discussion on [our community repository](https://github.com/mdn/mdn-community/discussions/categories/content-suggestions) outlining what content you are suggesting and why (please be as explicit as possible).
 
-For suggesting larger projects that involve new sections of content, please refer to the [Criteria for inclusion](/en_US/docs/MDN/Writing_guidelines/What_we_write/Criteria_for_inclusion) page, which also outlines the application process.
+For suggesting larger projects that involve new sections of content, please refer to the [Criteria for inclusion](/en-US/docs/MDN/Writing_guidelines/What_we_write/Criteria_for_inclusion) page, which also outlines the application process.
 
 ## Topics that belong on MDN Web Docs
 
@@ -63,16 +61,14 @@ We also document some broader topics, such as [SVG](/en-US/docs/Web/SVG), [XML](
 
 All content on MDN Web Docs must be relevant to the technology section in which it appears. Contributors are expected to follow these [MDN writing guidelines](/en-US/docs/MDN/Writing_guidelines) for writing style, code samples, and other topics.
 
-For more details about the criteria for whether or not a technology can be documented on MDN Web Docs, see the [Criteria for inclusion](/en_US/docs/MDN/Writing_guidelines/What_we_write/Criteria_for_inclusion) page.
+For more details about the criteria for whether or not a technology can be documented on MDN Web Docs, see the [Criteria for inclusion](/en-US/docs/MDN/Writing_guidelines/What_we_write/Criteria_for_inclusion) page.
 
 ### When we document a new technology
 
 On MDN Web Docs, we are constantly looking to document new web standards technologies as appropriate.
 We try to strike a balance between publishing the documentation early enough so that developers can learn about new features as soon as they need to and publishing it late enough so that the technology is mature and stable so that the documentation won't need constant updates or rapid removal.
 
-In general, our definition of the earliest we'll consider documenting a new technology is:
-
-_"When the feature is on a standards track and is implemented somewhere."_
+In general, our definition of the earliest we'll consider documenting a new technology is: _When the feature is on a standards track and is implemented somewhere._
 
 We consider documenting a new technology if it is:
 
@@ -110,7 +106,7 @@ The following examples describe situations when pages/content might be deleted:
 - Articles contain content that is inappropriate for MDN Web Docs.
 - Sections of MDN Web Docs are not focused on open web technologies and are a maintenance burden.
 
-For more information on _how_ to delete documents, please see the [Creating, moving and deleting pages](/en-US/docs/MDN/Writing_guidelines/Creating_moving_deleting) guide.
+For more information on _how_ to delete documents, please see the [Creating, moving and deleting pages](/en-US/docs/MDN/Writing_guidelines/Howto/Creating_moving_deleting) guide.
 
 ## Types of documents allowed on MDN Web Docs
 

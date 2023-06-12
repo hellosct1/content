@@ -1,23 +1,11 @@
 ---
-title: RTCIceCandidate.candidate
+title: "RTCIceCandidate: candidate property"
+short-title: candidate
 slug: Web/API/RTCIceCandidate/candidate
 page-type: web-api-instance-property
-tags:
-  - API
-  - Candidate
-  - Candidates
-  - ICE
-  - Media
-  - Property
-  - RTCIceCandidate
-  - Read-only
-  - Reference
-  - SDP
-  - WebRTC
-  - WebRTC API
-  - a-line
 browser-compat: api.RTCIceCandidate.candidate
 ---
+
 {{APIRef("WebRTC")}}
 
 The read-only property **`candidate`** on the {{domxref("RTCIceCandidate")}} interface returns a string describing the candidate in detail.
@@ -75,14 +63,6 @@ which represents the candidate.
 
 The new candidate is then passed into {{domxref("RTCPeerConnection.addIceCandidate()")}} to add the candidate to the list of
 candidates for WebRTC to consider using for the connection being established.
-
-This example could be simplified somewhat; you may more often see the code look
-something like this, taking advantage of more advanced ECMAScript 2016 features:
-
-```js
-let handleNewIceCandidate = (candidateSDP) =>
-  myPeerConnection.addIceCandidate(new RTCIceCandidate(candidateSDP));
-```
 
 ## Specifications
 

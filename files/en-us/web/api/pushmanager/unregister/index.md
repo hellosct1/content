@@ -1,15 +1,13 @@
 ---
-title: PushManager.unregister()
+title: "PushManager: unregister() method"
+short-title: unregister()
 slug: Web/API/PushManager/unregister
 page-type: web-api-instance-method
-tags:
-  - API
-  - Deprecated
-  - Method
-  - Reference
-  - Simple Push API
+status:
+  - deprecated
 browser-compat: api.PushManager.unregister
 ---
+
 {{deprecated_header}}{{ ApiRef("Push API")}}
 
 The **`unregister()`** method was used to ask the system to
@@ -19,7 +17,7 @@ unregister and delete the specified endpoint.
 
 ## Syntax
 
-```js
+```js-nolint
 unregister(pushEndpoint)
 ```
 
@@ -50,14 +48,14 @@ Those objects are anonymous JavaScript objects with the following properties:
 ```js
 const req = navigator.push.unregister(pushEndpoint);
 
-req.onsuccess = function(e) {
+req.onsuccess = (e) => {
   const endpoint = req.result;
-  debug(`Unregistered endpoint: ${endpoint}`);
-}
+  console.log(`Unregistered endpoint: ${endpoint}`);
+};
 
-req.onerror = function(e) {
-  debug(`Error unregistering the endpoint: ${JSON.stringify(e)}`);
-}
+req.onerror = (e) => {
+  console.error(`Error unregistering the endpoint: ${e.error}`);
+};
 ```
 
 ## Specifications

@@ -1,22 +1,17 @@
 ---
-title: File.lastModifiedDate
+title: "File: lastModifiedDate property"
+short-title: lastModifiedDate
 slug: Web/API/File/lastModifiedDate
 page-type: web-api-instance-property
-tags:
-  - API
-  - Deprecated
-  - File
-  - File API
-  - Files
-  - Property
-  - Read-only
-  - Reference
-  - lastModifiedDate
+status:
+  - deprecated
+  - non-standard
 browser-compat: api.File.lastModifiedDate
 ---
-{{APIRef("File API") }} {{deprecated_header}}
 
-The **`File.lastModifiedDate`** read-only property returns the last modified date of the file. Files without a known last modified date returns the current date .
+{{APIRef("File API")}}{{Deprecated_Header}}{{Non-standard_Header}}
+
+The **`File.lastModifiedDate`** read-only property returns the last modified date of the file. Files without a known last modified date return the current date.
 
 ## Value
 
@@ -28,19 +23,18 @@ A [`Date`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object indi
 // fileInput is a HTMLInputElement: <input type="file" multiple id="myfileinput">
 const fileInput = document.getElementById("myfileinput");
 
-// files is a FileList object (similar to NodeList)
-const files = fileInput.files;
-
-for (let i = 0; i < files.length; i++) {
-  alert(`${files[i].name} has a last modified date of ${files[i].lastModifiedDate}`);
+for (const file of fileInput.files) {
+  console.log(
+    `${file.name} has a last modified date of ${file.lastModifiedDate}`
+  );
 }
 ```
 
 ## Reduced time precision
 
-To offer protection against timing attacks and fingerprinting, the precision of `someFile.lastModifiedDate.getTime()` might get rounded depending on browser settings.
+To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), the precision of `someFile.lastModifiedDate.getTime()` might get rounded depending on browser settings.
 
-In Firefox, the `privacy.reduceTimerPrecision`  preference is enabled by default and defaults to 20us in Firefox 59; in 60 it will be 2ms.
+In Firefox, the `privacy.reduceTimerPrecision` preference is enabled by default and defaults to 20us in Firefox 59; in 60 it will be 2ms.
 
 ```js
 // reduced time precision (2ms) in Firefox 60

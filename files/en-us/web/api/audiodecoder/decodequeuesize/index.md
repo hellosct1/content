@@ -1,16 +1,14 @@
 ---
-title: AudioDecoder.decodeQueueSize
+title: "AudioDecoder: decodeQueueSize property"
+short-title: decodeQueueSize
 slug: Web/API/AudioDecoder/decodeQueueSize
 page-type: web-api-instance-property
-tags:
-  - API
-  - Property
-  - Reference
-  - decodeQueueSize
-  - AudioDecoder
+status:
+  - experimental
 browser-compat: api.AudioDecoder.decodeQueueSize
 ---
-{{securecontext_header}}{{DefaultAPISidebar("WebCodecs API")}}
+
+{{securecontext_header}}{{APIRef("WebCodecs API")}}{{SeeCompatTable}}
 
 The **`decodeQueueSize`** read-only property of the {{domxref("AudioDecoder")}} interface returns the number of pending decode requests in the queue.
 

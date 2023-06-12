@@ -1,18 +1,10 @@
 ---
 title: linear-gradient()
 slug: Web/CSS/gradient/linear-gradient
-tags:
-  - CSS
-  - CSS Function
-  - CSS Images
-  - Function
-  - Graphics
-  - Layout
-  - Reference
-  - Web
-  - gradient
+page-type: css-function
 browser-compat: css.types.image.gradient.linear-gradient
 ---
+
 {{CSSRef}}
 
 The **`linear-gradient()`** [CSS](/en-US/docs/Web/CSS) [function](/en-US/docs/Web/CSS/CSS_Functions) creates an image consisting of a progressive transition between two or more colors along a straight line. Its result is an object of the {{CSSxRef("&lt;gradient&gt;")}} data type, which is a special kind of {{CSSxRef("&lt;image&gt;")}}.
@@ -117,7 +109,7 @@ linear-gradient(red 0%, orange 10% 30%, yellow 50% 70%, green 90% 100%);
 
 By default, if there is no color with a 0% stop, the first color declared will be at that point. Similarly, the last color will continue to the 100% mark, or be at the 100% mark if no length has been declared on that last stop.
 
-### Formal syntax
+## Formal syntax
 
 {{csssyntax}}
 
@@ -170,8 +162,14 @@ body {
 
 ```css
 body {
-  background: linear-gradient(to right,
-     red 20%, orange 20% 40%, yellow 40% 60%, green 60% 80%, blue 80%);
+  background: linear-gradient(
+    to right,
+    red 20%,
+    orange 20% 40%,
+    yellow 40% 60%,
+    green 60% 80%,
+    blue 80%
+  );
 }
 ```
 
@@ -198,3 +196,4 @@ Please see [Using CSS gradients](/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradie
 - {{cssxref("image/image","image()")}}
 - {{cssxref("image/image-set","image-set()")}}
 - {{cssxref("cross-fade", "cross-fade()")}}
+- [New functions, gradients, and hues in CSS colors (Level 4)](/en-US/blog/css-color-module-level-4/) on MDN blog (May 3, 2023)

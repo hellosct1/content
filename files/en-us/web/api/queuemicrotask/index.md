@@ -1,29 +1,11 @@
 ---
-title: queueMicrotask()
+title: queueMicrotask() global function
+short-title: queueMicrotask()
 slug: Web/API/queueMicrotask
 page-type: web-api-global-function
-tags:
-  - API
-  - HTML DOM
-  - Intervals
-  - JavaScript
-  - Method
-  - Microtask
-  - Performance
-  - Reference
-  - Scheduling
-  - ServiceWorker
-  - SharedWorker
-  - Tasks
-  - Timers
-  - Window
-  - Worker
-  - asynchronous
-  - queueMicrotask
-  - setTimeout
-  - Polyfill
 browser-compat: api.queueMicrotask
 ---
+
 {{APIRef("HTML DOM")}}
 
 The **`queueMicrotask()`** method,
@@ -48,8 +30,8 @@ final cleanup or other just-before-rendering tasks.
 
 ## Syntax
 
-```js
-queueMicrotask(function() {/* ... */})
+```js-nolint
+queueMicrotask(() => {/* ... */})
 ```
 
 ### Parameters
@@ -68,7 +50,7 @@ None ({{jsxref("undefined")}}).
 ```js
 queueMicrotask(() => {
   // function contents here
-})
+});
 ```
 
 Taken from the [queueMicrotask spec](https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#microtask-queuing):
@@ -81,28 +63,15 @@ MyElement.prototype.loadData = function (url) {
       this.dispatchEvent(new Event("load"));
     });
   } else {
-    fetch(url).then((res) => res.arrayBuffer()).then((data) => {
-      this._cache[url] = data;
-      this._setData(data);
-      this.dispatchEvent(new Event("load"));
-    });
+    fetch(url)
+      .then((res) => res.arrayBuffer())
+      .then((data) => {
+        this._cache[url] = data;
+        this._setData(data);
+        this.dispatchEvent(new Event("load"));
+      });
   }
 };
-```
-
-## When queueMicrotask() isn't available
-
-The code below is basically a monkey-patch for `queueMicrotask()` for modern
-engines. It creates a microtask by using a promise that resolves immediately.
-
-```js
-if (typeof self.queueMicrotask !== "function") {
-  self.queueMicrotask = function (callback) {
-    Promise.resolve()
-      .then(callback)
-      .catch((e) => setTimeout(() => { throw e; })); // report exceptions
-  };
-}
 ```
 
 ## Specifications
@@ -115,7 +84,7 @@ if (typeof self.queueMicrotask !== "function") {
 
 ## See also
 
-- [Polyfill of `queueMicrotask` in `core-js`](https://github.com/zloirock/core-js#queuemicrotask)
+- [Polyfill of `queueMicrotask()` in `core-js`](https://github.com/zloirock/core-js#queuemicrotask)
 - [Using microtasks in JavaScript with queueMicrotask()](/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide)
 - [Asynchronous JavaScript](/en-US/docs/Learn/JavaScript/Asynchronous)
 - [queueMicrotask explainer](https://github.com/fergald/docs/blob/master/explainers/queueMicrotask.md)
