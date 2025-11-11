@@ -1,21 +1,40 @@
 ---
 title: Map.prototype.values()
+short-title: values()
 slug: Web/JavaScript/Reference/Global_Objects/Map/values
 page-type: javascript-instance-method
 browser-compat: javascript.builtins.Map.values
+sidebar: jsref
 ---
 
-{{JSRef}}
+The **`values()`** method of {{jsxref("Map")}} instances returns a new _[map iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator)_ object that contains the values for each element in this map in insertion order.
 
-The **`values()`** method returns a new _[map iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator)_ object that contains the values for each element in the `Map` object in insertion order.
+{{InteractiveExample("JavaScript Demo: Map.prototype.values()")}}
 
-{{EmbedInteractiveExample("pages/js/map-prototype-values.html")}}
+```js interactive-example
+const map = new Map();
+
+map.set("0", "foo");
+map.set(1, "bar");
+
+const iterator = map.values();
+
+console.log(iterator.next().value);
+// Expected output: "foo"
+
+console.log(iterator.next().value);
+// Expected output: "bar"
+```
 
 ## Syntax
 
 ```js-nolint
 values()
 ```
+
+### Parameters
+
+None.
 
 ### Return value
 

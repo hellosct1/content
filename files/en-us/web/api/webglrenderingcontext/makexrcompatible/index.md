@@ -6,7 +6,7 @@ page-type: web-api-instance-method
 browser-compat: api.WebGLRenderingContext.makeXRCompatible
 ---
 
-{{APIRef("WebGL")}}
+{{APIRef("WebGL")}}{{AvailableInWorkers}}
 
 The {{domxref("WebGLRenderingContext")}} method
 **`makeXRCompatible()`** ensures that the rendering context
@@ -96,12 +96,10 @@ let currentScene = "scene1";
 let glStartButton;
 let xrStartButton;
 
-window.addEventListener("load", (event) => {
-  loadSceneResources(currentScene);
+loadSceneResources(currentScene);
 
-  glStartButton.addEventListener("click", handleStartButtonClick);
-  xrStartButton.addEventListener("click", handleStartButtonClick);
-});
+glStartButton.addEventListener("click", handleStartButtonClick);
+xrStartButton.addEventListener("click", handleStartButtonClick);
 
 outputCanvas.addEventListener("webglcontextlost", (event) => {
   /* The context has been lost but can be restored */
@@ -122,13 +120,13 @@ async function onStartedXRSession(xrSession) {
       case AbortError:
         showSimpleMessageBox(
           "Unable to transfer the game to your XR headset.",
-          "Cancel"
+          "Cancel",
         );
         break;
       case InvalidStateError:
         showSimpleMessageBox(
           "You don't appear to have a compatible XR headset available.",
-          "Cancel"
+          "Cancel",
         );
         break;
       default:

@@ -38,7 +38,7 @@ const nommingCake = document
       fill: "forwards",
       easing: "steps(4, end)",
       duration: aliceChange.effect.timing.duration / 2,
-    }
+    },
   );
 
 // Pause the cake's animation so it doesn't play immediately.
@@ -54,8 +54,8 @@ const growAlice = () => {
 };
 
 // When a user holds their mouse down or taps, call growAlice to make all the animations play.
-cake.addEventListener("mousedown", growAlice, false);
-cake.addEventListener("touchstart", growAlice, false);
+cake.addEventListener("mousedown", growAlice);
+cake.addEventListener("touchstart", growAlice);
 ```
 
 ## Specifications

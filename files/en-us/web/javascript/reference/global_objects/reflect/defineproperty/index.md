@@ -1,15 +1,29 @@
 ---
 title: Reflect.defineProperty()
+short-title: defineProperty()
 slug: Web/JavaScript/Reference/Global_Objects/Reflect/defineProperty
 page-type: javascript-static-method
 browser-compat: javascript.builtins.Reflect.defineProperty
+sidebar: jsref
 ---
-
-{{JSRef}}
 
 The **`Reflect.defineProperty()`** static method is like {{jsxref("Object.defineProperty()")}} but returns a {{jsxref("Boolean")}}.
 
-{{EmbedInteractiveExample("pages/js/reflect-defineproperty.html")}}
+{{InteractiveExample("JavaScript Demo: Reflect.defineProperty()")}}
+
+```js interactive-example
+const object = {};
+
+if (Reflect.defineProperty(object, "foo", { value: 42 })) {
+  console.log("foo created!");
+  // Expected output: "foo created!"
+} else {
+  console.log("problem creating foo");
+}
+
+console.log(object.foo);
+// Expected output: 42
+```
 
 ## Syntax
 
@@ -90,4 +104,4 @@ if (Reflect.defineProperty(target, property, attributes)) {
 - [Polyfill of `Reflect.defineProperty` in `core-js`](https://github.com/zloirock/core-js#ecmascript-reflect)
 - {{jsxref("Reflect")}}
 - {{jsxref("Object.defineProperty()")}}
-- [`Proxy`'s `defineProperty` handler](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy/defineProperty)
+- [`handler.defineProperty()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy/defineProperty)

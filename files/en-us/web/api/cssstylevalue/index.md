@@ -22,10 +22,10 @@ Below is a list of interfaces based on the `CSSStyleValue` interface.
 
 ## Static methods
 
-- [`CSSStyleValue.parse()`](/en-us/docs/Web/API/CSSStyleValue/parse_static)
-  - : Sets a specific CSS property to the specified values and returns the first value as a {{domxref('CSSStyleValue')}} object.
-- [`CSSStyleValue.parseAll()`](/en-us/docs/Web/API/CSSStyleValue/parseAll_static)
-  - : Sets all occurrences of a specific CSS property to the specified value and returns an array of {{domxref('CSSStyleValue')}} objects, each containing one of the supplied values.
+- [`CSSStyleValue.parse()`](/en-US/docs/Web/API/CSSStyleValue/parse_static)
+  - : Sets a specific CSS property to the specified values and returns the first value as a `CSSStyleValue` object.
+- [`CSSStyleValue.parseAll()`](/en-US/docs/Web/API/CSSStyleValue/parseAll_static)
+  - : Sets all occurrences of a specific CSS property to the specified value and returns an array of `CSSStyleValue` objects, each containing one of the supplied values.
 
 ## Specifications
 

@@ -23,7 +23,7 @@ createProjectionLayer(options)
 - `options`
   - : An object to configure the {{domxref("XRProjectionLayer")}}.
     - `textureType` {{optional_inline}}
-      - : An string defining the type of texture the layer will have. Possible values:
+      - : A string defining the type of texture the layer will have. Possible values:
         - `texture`
           - : The textures of {{domxref("XRWebGLSubImage")}} will be of type `gl.TEXTURE_2D`.
         - `texture-array`
@@ -52,7 +52,7 @@ createProjectionLayer(options)
         - `gl.DEPTH24_STENCIL24`
           The default value is `gl.DEPTH_COMPONENT`.
     - `scaleFactor` {{optional_inline}}
-      - : A floating-point value which is used to scale the layer during compositing. A value of `1.0` represents the default pixel size for the frame buffer. (See also {{domxref("XRWebGLLayer.getNativeFramebufferScaleFactor()")}}.) Unlike other layers, the `XRProjectionLayer` can't be created with an explicit pixel width and height, because the size is inferred by the hardware. (Projection layers fill the observer's entire view.)
+      - : A floating-point value which is used to scale the layer during compositing. A value of `1.0` represents the default pixel size for the frame buffer. (See also {{domxref("XRWebGLLayer.getNativeFramebufferScaleFactor_static", "XRWebGLLayer.getNativeFramebufferScaleFactor()")}}.) Unlike other layers, the `XRProjectionLayer` can't be created with an explicit pixel width and height, because the size is inferred by the hardware. (Projection layers fill the observer's entire view.)
 
 ### Return value
 

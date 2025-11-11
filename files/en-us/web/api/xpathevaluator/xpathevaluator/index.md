@@ -6,7 +6,7 @@ page-type: web-api-constructor
 browser-compat: api.XPathEvaluator.XPathEvaluator
 ---
 
-{{APIRef('DOM XPath')}}
+{{APIRef("DOM")}}
 
 The **`XPathEvaluator()`** constructor creates a new {{domxref("XPathEvaluator")}}.
 
@@ -45,7 +45,7 @@ const evaluator = new XPathEvaluator();
 const expression = evaluator.createExpression(xpath);
 const result = expression.evaluate(
   document,
-  XPathResult.ORDERED_NODE_SNAPSHOT_TYPE
+  XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
 );
 document.querySelector("output").textContent = result.snapshotLength;
 ```
