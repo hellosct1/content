@@ -79,8 +79,8 @@ The scroll-padding properties define offsets for the _optimal viewing region_ of
 
 This property is a shorthand for the following CSS properties:
 
-- [`scroll-padding-inline-end`](/en-US/docs/Web/CSS/Reference/Properties/scroll-padding-inline-end)
-- [`scroll-padding-inline-start`](/en-US/docs/Web/CSS/Reference/Properties/scroll-padding-inline-start)
+- {{cssxref("scroll-padding-inline-end")}}
+- {{cssxref("scroll-padding-inline-start")}}
 
 ## Syntax
 
@@ -126,5 +126,5 @@ scroll-padding-inline: unset;
 
 ## See also
 
-- [CSS scroll snap](/en-US/docs/Web/CSS/Guides/Scroll_snap)
-- [Well-controlled scrolling with CSS scroll snap](https://web.dev/articles/css-scroll-snap)
+- [CSS scroll snap](/en-US/docs/Web/CSS/Guides/Scroll_snap) module
+- [Well-controlled scrolling with CSS scroll snap](https://web.dev/articles/css-scroll-snap) on web.dev (2018)

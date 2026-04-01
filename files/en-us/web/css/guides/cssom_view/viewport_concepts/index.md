@@ -119,7 +119,7 @@ If the iframe is set to 50vw, it will be 50% of the width of the `1200px` parent
 A width-based media query within the iframe document is relative to the iframe's viewport.
 
 ```css
-@media screen and (width >= 500px) {
+@media screen and (width <= 500px) {
   p {
     color: red;
   }
@@ -152,9 +152,9 @@ Generally, when you write the above media query, the styles are applied if the v
 
 ### JavaScript
 
-The [Visual Viewport API](/en-US/docs/Web/API/Visual_Viewport_API) provides a mechanism for querying and modifying the properties of the visual viewport.
+The [`VisualViewport`](/en-US/docs/Web/API/VisualViewport#examples) interface provides a mechanism for querying and modifying the properties of the visual viewport.
 
-The [Viewport API](/en-US/docs/Web/API/Viewport_API) provides a mechanism for querying and modifying the properties of the visual viewport.
+The [`Viewport`](/en-US/docs/Web/API/Viewport) interface provides a mechanism for querying and modifying the properties of the visual viewport.
 
 ## Mobile viewports
 
@@ -169,8 +169,7 @@ The `width` property controls the size of the viewport. It should preferably be 
 ## See also
 
 - [CSSOM view](/en-US/docs/Web/CSS/Guides/CSSOM_view) module
-- [Visual Viewport API](/en-US/docs/Web/API/Visual_Viewport_API)
+- [CSSOM view API](/en-US/docs/Web/API/CSSOM_view_API)
 - {{HTMLElement("meta")}}, specifically [`<meta name="viewport">`](/en-US/docs/Web/HTML/Reference/Elements/meta/name/viewport)
-- [Visual Viewport API](/en-US/docs/Web/API/Visual_Viewport_API)
 - [CSS viewport](/en-US/docs/Web/CSS/Guides/Viewport) module
 - [CSSOM view](/en-US/docs/Web/CSS/Guides/CSSOM_view) module

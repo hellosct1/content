@@ -81,8 +81,8 @@ scroll-margin-inline: 0px 3em;
 
 This property is a shorthand for the following CSS properties:
 
-- [`scroll-margin-inline-end`](/en-US/docs/Web/CSS/Reference/Properties/scroll-margin-inline-end)
-- [`scroll-margin-inline-start`](/en-US/docs/Web/CSS/Reference/Properties/scroll-margin-inline-start)
+- {{cssxref("scroll-margin-inline-end")}}
+- {{cssxref("scroll-margin-inline-start")}}
 
 ## Syntax
 
@@ -212,5 +212,5 @@ Try it for yourself:
 
 ## See also
 
-- [CSS scroll snap](/en-US/docs/Web/CSS/Guides/Scroll_snap)
-- [Well-controlled scrolling with CSS scroll snap](https://web.dev/articles/css-scroll-snap)
+- [CSS scroll snap](/en-US/docs/Web/CSS/Guides/Scroll_snap) module
+- [Well-controlled scrolling with CSS scroll snap](https://web.dev/articles/css-scroll-snap) on web.dev (2018)

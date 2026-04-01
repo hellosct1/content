@@ -74,8 +74,8 @@ scroll-margin-block: 2em;
 
 This property is a shorthand for the following CSS properties:
 
-- [`scroll-margin-block-end`](/en-US/docs/Web/CSS/Reference/Properties/scroll-margin-block-end)
-- [`scroll-margin-block-start`](/en-US/docs/Web/CSS/Reference/Properties/scroll-margin-block-start)
+- {{cssxref("scroll-margin-block-end")}}
+- {{cssxref("scroll-margin-block-start")}}
 
 ## Syntax
 
@@ -119,5 +119,5 @@ The scroll-margin values represent outsets defining the scroll snap area that is
 
 ## See also
 
-- [CSS scroll snap](/en-US/docs/Web/CSS/Guides/Scroll_snap)
-- [Well-controlled scrolling with CSS scroll snap](https://web.dev/articles/css-scroll-snap)
+- [CSS scroll snap](/en-US/docs/Web/CSS/Guides/Scroll_snap) module
+- [Well-controlled scrolling with CSS scroll snap](https://web.dev/articles/css-scroll-snap) on web.dev (2018)
